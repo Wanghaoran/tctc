@@ -18,6 +18,8 @@ return array(
     'DB_PORT' => '3306',  //端口
     'DB_PREFIX' => 'tctc_',  //数据库表前缀
 
+    'URL_CASE_INSENSITIVE' => true,//URL不区分大小写
+
     'UPLOAD_PATH' => './Upload', //文件上传地址
     'TMPL_PARSE_STRING'  =>array(
         '__UPLOAD__' => __ROOT__ . '/Upload',
