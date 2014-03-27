@@ -1,0 +1,65 @@
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0; border:0;}
+body,button,input,select,textarea{font:12px/1.6  "\5FAE\8F6F\96C5\9ED1";}/*5FAE\8F6F\96C5\9ED1  Verdana, Helvetica, sans-serif*/
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+address,cite,dfn,em,var{font-style:normal;}
+code,kbd,pre,samp{font-family:courier new,courier,monospace;}
+small{font-size:12px;}
+ul,ol,li{list-style:none;}
+a:link,a:visited{color:#898989;text-decoration:none;}
+a:hover,a:active{color:#898989;text-decoration:none;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+legend{color:#000;}
+fieldset,img{border:0;}
+button,input,select,textarea{font-size:100%;}
+table{border-collapse:collapse;border-spacing:0;}
+input{outline: none;}/* �����ı������ */
+textarea {outline: none;} 
+a{text-decoration:none;color:#333;outline:none;}
+a:hover{text-decoration:none;color:#F40;outline:none;}
+/* ���?�� */
+.clear:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clear {zoom:1; /* for IE6 IE7 */}
+.clear2{ clear:both; height:2px;}
+.clear5{ clear:both; height:5px;}
+.clear6{ clear:both; height:6px;}
+.clear10{ clear:both; height:10px;}
+.clear20{ clear:both; height:20px;}
+.clear30{ clear:both; height:30px;}
+.clear40{ clear:both; height:40px;}
+.fl{ float:left;}
+
+body{font-family:"mircrosoft yahei","微软雅黑",Tahoma, Verdana, Arial, Geneva, sans-serif; background:#c17436;}
+html{-webkit-text-size-adjust:none;}/*chrome font-size<12px */ 
+html, body {height: 100%;}
+
+.container{ min-width:320px; width:100%; min-height:420px; height:100%; background:url(../images/bodybg.jpg) top no-repeat; background-size:100% auto; -moz-background-size:100% auto; }
+a.btn_bm{ width:99px; height:30px; background:url(../images/btn_bm.png) no-repeat; background-size:99px 30px; -moz-background-size:99px 30px; display:inline-block; text-decoration:none; cursor:pointer; position:absolute; top:85%; left:50%; margin-left:-49px;}
+
+.container2{ background:#272727; min-width:320px; width:100%; min-height:420px; height:100%;position:relative;}
+	.tableform{ background:url(../images/tablebg.png) bottom no-repeat; background-size:310px 352px; -moz-background-size:310px 352px; width:310px; height:352px; margin:0 auto; padding-top:10px;}
+	ul.ultable{ padding:100px 0 0 0;}
+				 ul.ultable li{ width:125px; height:35px; line-height:35px; padding-left:62px; margin-bottom:12px;}
+				 ul.ultable li.li1{ width:88px;}
+				 ul.ultable li.li2{ width:254px;padding-top:15px;}
+				 ul.ultable li.li3{ padding-left:0px; margin-top:37px; }
+				 .hRadio{display: inline-block; float:left; width:34px; margin-left:8px; margin-top:5px; height:35px; background:url(../images/radiobg.png) left center no-repeat; background-size:11px 11px; -moz-background-size:11px 11px;cursor:pointer;vertical-align:middle;}
+				 .hRadio_Checked { background:url(../images/radiobgon.png) left center no-repeat; background-size:11px 11px; -moz-background-size:11px 11px;}
+				 
+				 .as{ text-indent:-9999em;}
+				 .inputclass1{ border:none; background:none; width:98px; height:28px; line-height:28px; color:#333; padding:7px 0 0 2px;}
+				 .inputclass2{ border:none; background:none; width:125px; height:28px; line-height:28px; color:#333; padding:7px 0 0 2px;}
+				 
+				 
+				 a.mztk{ display:inline-block; margin-left:58px; width:50px; height:35px; line-height:35px; cursor:pointer; text-indent:-9999em;}
+				 
+.mydiv2{ width:240px; border:#dd8640 5px solid; height:240px; padding:5px; background:#272727; text-align: center; font-size: 12px; z-index:99; position:absolute;/*FF IE7*/    }   
+.divimg2{ clear:both; width:240px; height:240px; overflow:hidden; overflow-y:auto; margin:0 auto; text-align:center; color:#fff;}
+.divimg2 h2{ text-align: center; height:25px; line-height:25px; font-size:14px; font-weight:800;}
+.divimg2 p{ line-height:20px; text-align:left;}
+	  /*美化select*/
+	  ul.ultable li .select_box{font-size:14px;color:#333;width:74px; height:34px; line-height:34px; border: none; margin-right:10px; text-align:center;}
+	  
+.btn_submit{min-width:320px; width:100%; background:#f08d3e; position:absolute; bottom:0; text-align:center;}
+.btn_submit a{min-width:320px; width:100%; height:40px; display:inline-block; background:url(../images/btn_submit.png) center no-repeat;background-size:39px 20px; -moz-background-size:39px 20px;cursor:pointer;}
+	

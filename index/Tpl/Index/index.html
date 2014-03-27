@@ -113,6 +113,8 @@
                             });
                             //$("#popDiv").show();
                             $("#popDiv").css( { position : 'absolute', 'top' : top + scrollTop, left : left + scrollLeft } ).show();
+                        }else if(ress == 2){
+                            alert('您已参加此活动，请勿重复申请！');
                         }else{
                             alert('添加失败，请您稍后再试！');
                         }
@@ -179,7 +181,7 @@
 
     <div class="divimg">
         <h2><img src="__PUBLIC__/index/images/poptext1.png" /></h2>
-        <div class="divbtn"><a href="#" class="login_sina2"></a><a href="#" class="login_qq2"></a></div>
+        <div class="divbtn"><a onclick="alert('分享活动尚未开始，敬请期待！');" class="login_sina2"></a><a onclick="alert('分享活动尚未开始，敬请期待！');" class="login_qq2"></a></div>
         <h3><img src="__PUBLIC__/index/images/poptext2.png" /></h3>
     </div>
 </div>
@@ -282,6 +284,9 @@
 </div>
 <!--分享-->
 <div class="sharebox">
+
+    <div class="hidebg3" style="display:block"><h2>故事分享尚未开始</h2><h3>敬请期待...</h3></div>
+
     <div class="sharecon">
         <div class="sharetitle"><a href="#" class="login_qq"></a><a href="#" class="login_sina"></a></div>
         <div class="clear20"></div>

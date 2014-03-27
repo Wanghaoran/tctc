@@ -6,11 +6,20 @@ class IndexAction extends Action {
     }
 
     public function mobile(){
-        $this -> show('<h1>Mobile Page 稍后上线，敬请期待!</h1>');
+        $this -> display();
+    }
+
+    public function mobile_add(){
+        $this -> display();
     }
 
     public function add(){
         $User = M('User');
+        $re = $User -> getFieldBytel($this -> _post('tel'), 'id');
+        if($re){
+            echo 2;
+            return;
+        }
         $data = array();
         $data['name'] = $this -> _post('name');
         $data['sex'] = $this -> _post('sex');

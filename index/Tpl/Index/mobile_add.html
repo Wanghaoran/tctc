@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RAV4-20周年纪念</title>
+<meta http-equiv="Cache-Control" content="max-age=3600">
+<meta name="MobileOptimized" content="240">
+<meta name="apple-touch-fullscreen" content="YES">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/mobile/css/common.css">
+<script type="text/javascript" src="__PUBLIC__/mobile/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/mobile/js/jsAddress.js"></script>
+<script type="text/javascript">
+;(function($){
+    $.fn.hradio = function(options){
+        var self = this;
+        return $(':radio+label',this).each(function(){
+            $(this).addClass('hRadio');
+            if($(this).prev().is(":checked"))
+                $(this).addClass('hRadio_Checked');
+        }).click(function(event){
+            $(this).siblings().removeClass("hRadio_Checked");
+            if(!$(this).prev().is(':checked')){
+				$(this).addClass("hRadio_Checked");
+                $(this).prev()[0].checked = true;
+            }
+               
+            event.stopPropagation();
+        })
+        .prev().hide();
+    }
+})(jQuery)
+</script>
+<script type="text/javascript">
+$(function(){
+	//单选按钮
+	$('#radiolist').hradio();	
+	
+	//弹出遮罩层2
+	$(".mztk").click(function(event){
+		 var top = ($(window).height() - $("#popDiv2").height())/2;   
+        var left = ($(window).width() - $("#popDiv2").width())/2;   
+        var scrollTop = $(document).scrollTop();   
+        var scrollLeft = $(document).scrollLeft();  
+        var e1=window.event || event;
+        if(e1.stopPropagation){
+            e1.stopPropagation();
+        }else{
+            e1.cancelBubble = true;
+        }   
+        $("#hidebg2").css({
+		display: "block"
+		});
+		$("#popDiv2").css( { position : 'absolute', 'top' : top + scrollTop, left : left + scrollLeft } ).show();  
+    });
+    $(".divimg2").click(function(event){
+        var e1=window.event || event;
+        if(e1.stopPropagation){
+            e1.stopPropagation();
+        }else{
+            e1.cancelBubble = true;
+        }
+    });
+	
+    document.onclick = function(){
+		$("#hidebg2,#popDiv2").hide();
+    };
+})
+
+
+</script>
+    <script>
+        var tosubmit = function(){
+            var name = $('#name').val();
+            var sex = $('input[name="sex"]:checked').val();
+            var tel = $('#tel').val();
+            var add_1 = $('#Select1').val();
+            var add_2 = $('#Select2').val();
+            var add_3 = $('#Select3').val();
+            if(!name){
+                alert('请您填写姓名！');
+                return false;
+            }
+            if(!tel){
+                alert('请您填写联系电话！');
+                return false;
+            }
+            if(!add_1 || !add_2 || !add_3){
+                alert('请填写完整的地址信息');
+                return false;
+            }
+
+            $.ajax({
+                type : 'POST',
+                url : '__URL__/add',
+                cache : false,
+                data : '&name=' + name + '&tel=' + tel + '&sex=' + sex + '&add_1=' + add_1 + '&add_2=' + add_2 + '&add_3=' + add_3,
+                success : function(ress){
+                    if(ress == 1){
+                        alert('您的验证信息已录入成功！');
+                    }else if(ress == 2){
+                        alert('您已参加此活动，请勿重复申请！');
+                    }else{
+                        alert('添加失败，请您稍后再试！');
+                    }
+
+                }
+            });
+
+        }
+    </script>
+</head>
+<body>
+<!--遮罩层12  start-->
+<div id="popDiv2" class="mydiv2" style="display:none;"> 	
+     
+    <div class="divimg2"> 
+    	<h2>一汽丰田顾客个人信息保护基本方针</h2>
+
+<p>一汽丰田汽车销售有限公司(以下简称“一汽丰田销售”)、一汽丰田销售认定的经销商（以下简称“一汽丰田经销商”）及其各自的关联公司（包括但不限于其各自的母公司、车辆的制造公司及丰田汽车（中国）投资有限公司）（以下将“一汽丰田销售”、“一汽丰田经销商”及其各自的关联公司统称为“一汽丰田”）认为严格遵守个人信息保护相关的中国法律法规，妥善处理顾客个人姓名、地址、电话号码、邮箱地址等能够识别顾客个人及其家庭成员身份的信息（以下简称“个人信息”），是企业重要的社会责任。基于此，“一汽丰田”制定了如下的保护个人信息基本方针。</p> 
+
+<p>1.个人信息的取得</p> 
+<p>1) “一汽丰田”于以下情形取得个人信息：</p>  
+<p>① 销售产品、提供服务时取得的个人信息；</p> 
+<p>② 为了提供问询对应等取得的个人信息（包括使用来电显示取得的联系方式）；</p> 
+<p>③ 实施各项调查（包括“一汽丰田”委托外部公司实施的）时取得的个人信息；</p> 
+<p>④ “一汽丰田”取得的其他个人信息。</p> 
+<p>2) “一汽丰田”将在取得顾客的同意后，取得其个人信息。</p> 
+
+<p>2.个人信息的处理</p> 
+<p>1）关于个人信息的使用</p> 
+<p>“一汽丰田”根据前述第1.条规定取得的个人信息，将仅在“一汽丰田”内部根据需要进行共享，并且仅为以下目的或其他合法、正当的目的使用：</p> 
+<p>① 与顾客进行的交易；</p> 
+<p>② 商品及服务的企划、开发、改善；</p> 
+<p>③ 发送与“一汽丰田”的产品、服务、宣传活动（包括但不限于汽车、保险等）相关的信息或通知；</p> 
+ <p>（但在未取得顾客同意的情况下，我们不会发送商业性目的的上述信息或通知）</p> 
+<p>④ 在产品企划、开发或提高服务质量及顾客满意度等方面，实施的各项调查；</p> 
+<p>⑤ 顾客问询、联系“一汽丰田经销商”及丰田顾客服务中心时，进行迅速的对应；</p> 
+<p>⑥ 根据法律规定或政府机关、法院、调解机构、仲裁机构等的通知、指导等而采取的对应；</p> 
+<p>⑦ 其他取得个人信息时所明示的使用目的。</p> 
+<p>2）向第三方提供个人信息</p> 
+<p>“一汽丰田”根据前述第1.条规定取得的个人信息，在未取得顾客同意的情况下，不会向第三方提供或出售。但是，为了实现上述使用目的，在必要的范围内，会提供给业务受托方。于此情形下，“一汽丰田”会要求业务受托方妥当处理“一汽丰田”所提供的个人信息，并进行妥善管理。</p> 
+<p>3）妥善管理个人信息</p> 
+<p>为了对个人信息严格保密，防止不正当接触个人信息，防止个人信息丢失、损坏、被篡改、泄露等，“一汽丰田”采取了妥善的安全措施，并且将在因前述事由导致事故后采取救济措施。</p> 
+
+<p>3.问询等</p> 
+<p>关于个人信息的相关问询，请就近联系“一汽丰田经销商”或“一汽丰田顾客服务中心”。“一汽丰田”将严格遵守个人信息保护相关的中国法律法规，进行妥善处理。</p> 
+<p>•关于就近的“一汽丰田经销商”</p> 
+<p>【http://www.ftms.com.cn/buy/dealer/index.php】</p> 
+<p>•“一汽丰田顾客服务中心”</p> 
+<p>【电话：800-810-1210，400-810-1210】</p> 
+
+<p>4.遵纪守法与改善</p> 
+<p>“一汽丰田”将严格遵守个人信息保护相关的中国法律法规，并为了妥善处理个人信息而进行持续性的改善，并会将改善内容随时体现在本基本方针中。</p> 
+
+    </div> 
+</div>                                   
+<div id="hidebg2" class="hidebg" style="display:none"></div> 
+<!--遮罩层2  end--> 
+
+	<div class="container2">
+    	<div class="tableform">
+        	<ul class="ultable">
+                    	<li class="li1"><input type="text" class="inputclass1" id="name" /></li>
+                        <li class="li1">
+                        	<div id="radiolist">
+                            <input name='sex' type="radio" value='男' checked="checked"/><label><div class="as">男</div></label>
+                            <input name='sex' type="radio" value='女' /><label><div class="as">女</div></label>
+                            </div>
+                        </li>
+                        <li><input type="text" class="inputclass2" id="tel" /></li>
+                        <li class="li2">
+                            <div class="fl"><select id="Select1" class="select_box"></select></div>
+                            <div class="fl"><select id="Select2" class="select_box"></select></div>
+                            <div class="fl"><select id="Select3" class="select_box"></select></div>
+                            <script type="text/javascript">
+								addressInit('Select1', 'Select2', 'Select3');
+							</script>
+                            
+                        </li>
+                        <li class="li3">
+                    	<a href="javascript:;" class="mztk">免责条款</a>
+                    	</li>
+                        <div class="clear"></div>
+                    </ul>
+        </div>
+        <div class="btn_submit"><a href="#" onclick="tosubmit();"></a></div>
+    </div>
+</body>
+
+</html>

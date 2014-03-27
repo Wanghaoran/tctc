@@ -6,7 +6,7 @@ class OnlineAction extends CommonAction {
       if(!empty($_POST['name'])){
           $where['name'] = array('LIKE', '%' . $_POST['name'] . '%');
       }
-      R('Public/select', array('User', 'id,name,sex,tel,add_1,add_2,add_3,applyTime,status', $where, 'applyTime DESC'));
+      R('Public/select', array('User', 'id,name,sex,tel,add_1,add_2,add_3,applyTime,status,offline', $where, 'applyTime DESC'));
       $this -> display();
   }
 
@@ -37,7 +37,7 @@ class OnlineAction extends CommonAction {
         $post_data['havecarstyle'] = '';
         $post_data['time'] = '暂不考虑';
         $post_data['dealers'] = $_POST['dealers'];
-        $post_data['source'] = '378';
+        $post_data['source'] = '379';
         $post_data['vercode'] = strtoupper(md5($post_data['name'] . $post_data['phone'] . $post_data['source']));
         $post_data['agreepush'] = '2';
 
@@ -51,6 +51,10 @@ class OnlineAction extends CommonAction {
 
         $data = curl_exec($ch);
         curl_close($ch);
+
+        $patterns = "/\d+/";
+        preg_match_all($patterns,$data ,$arr);
+        $data = $arr[0][0];
 
         $return_code = array(
             '200' => '提交成功',
