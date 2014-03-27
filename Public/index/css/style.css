@@ -88,3 +88,7 @@ html, body {height: 100%;}
 .divbtn{ width:420px; height:40px; margin:20px auto;}
 a.login_sina2{ display:inline-block; width:200px; height:40px; background:url(../images/btn_login2.png) left center no-repeat; margin-right:20px;}
 a.login_qq2{ display:inline-block; width:200px; height:40px; background:url(../images/btn_login2.png) right center no-repeat;}
+
+/*美化select*/
+ul.ultable li select{display: block;}
+ul.ultable li .select_box{font-size:14px;color:#333;width:104px; height:38px; line-height:38px; border: none; margin-right:16px; text-align:center; position:relative;}
