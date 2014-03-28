@@ -17,7 +17,7 @@
                 data : '&username=' + username + '&tel=' + tel,
                 dataType : 'json',
                 success : function(ress){
-                    if(ress != 'null'){
+                    if(ress){
                         location.href='__URL__/validation/uid/' + ress['id'];
                     }else{
                         alert('此用户不存在！');
