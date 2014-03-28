@@ -6,7 +6,7 @@ class OnlineAction extends CommonAction {
       if(!empty($_POST['name'])){
           $where['name'] = array('LIKE', '%' . $_POST['name'] . '%');
       }
-      R('Public/select', array('User', 'id,name,sex,tel,add_1,add_2,add_3,applyTime,status,offline', $where, 'applyTime DESC'));
+      R('Public/select', array('User', 'id,name,sex,tel,add_1,add_2,add_3,applyTime,status,offline,source', $where, 'applyTime DESC'));
       $this -> display();
   }
 
@@ -81,6 +81,7 @@ class OnlineAction extends CommonAction {
             $data_update = array();
             $data_update['id'] = $_POST['id'];
             $data_update['status'] = 2;
+            $data_update['province'] = $_POST['dealers'];
             $User -> save($data_update);
             $this -> success($return_code[$data]);
         }else{

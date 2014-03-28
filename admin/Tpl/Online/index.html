@@ -39,6 +39,7 @@
 			<th width="100">地址</th>
 			<th width="30">申请时间</th>
 			<th width="30">状态</th>
+			<th width="30">来源</th>
 			<th width="30">线下验证</th>
 		</tr>
 		</thead>
@@ -56,6 +57,7 @@
                   <else/>
                   <td style="color: green;">已推送</td>
               </eq>
+            <td><-{$r.source}-></td>
             <eq name="r.offline" value="1">
                 <td style="color: red;">未验证</td>
                 <else/>

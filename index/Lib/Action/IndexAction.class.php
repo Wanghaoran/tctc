@@ -27,6 +27,7 @@ class IndexAction extends Action {
         $data['add_1'] = $this -> _post('add_1');
         $data['add_2'] = $this -> _post('add_2');
         $data['add_3'] = $this -> _post('add_3');
+        $data['source'] = $this -> _post('source');
         $data['applyTime'] = time();
         if($User -> add($data)){
             echo 1;
