@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RAV4-20周年纪念 - 经销商验证系统</title>
+<link href="__PUBLIC__/offline/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/offline/javascript/jquery.js"></script>
+<script type="text/javascript">
+function popDiv(event){
+
+    var number = $('#number').val();
+    var uid = '<-{$result.id}->';
+
+    if(!number){
+        alert('驾驶证号码不能为空！');
+        return false;
+    }
+
+    $.ajax({
+        url : '__URL__/tovalidation',
+        type : 'POST',
+        cache : false,
+        data : '&number=' + number + '&uid=' + uid,
+        success : function(ress){
+            if(ress == 1){
+                var top = ($(window).height() - $("#popDiv").height())/2;
+                var left = ($(window).width() - $("#popDiv").width())/2;
+                var scrollTop = $(document).scrollTop();
+                var scrollLeft = $(document).scrollLeft();
+
+
+                var e=window.event || event;
+
+                if(e.stopPropagation){
+                    e.stopPropagation();
+                }else{
+                    e.cancelBubble = true;
+                }
+                $("#hidebg").css({
+                    display: "block"
+                });
+                //$("#popDiv").show();
+                $("#popDiv").css( { position : 'absolute', 'top' : top + scrollTop, left : left + scrollLeft } ).show();
+            }else{
+                alert('线下验证失败！');
+            }
+        }
+
+    });
+
+
+
+
+
+    }  
+</script>
+</head>
+<body>
+<!--遮罩层1  start-->
+<div id="popDiv" class="mydiv" style="display:none;"> 	
+     
+    <div class="divimg"> 
+    <h2><img src="__PUBLIC__/offline/images/text1.png" /></h2>
+    <div class="btn_fanhui"><a href="__URL__">返回首页</a></div>
+    
+    </div> 
+</div>                                   
+<div id="hidebg" class="hidebg" style="display:none"></div> 
+<!--遮罩层1  end--> 
+
+	<div class="yanzheng">
+    	<div class="yzcon">
+            <ul class="ul_yz">
+            	<li title="姓名"><-{$result.name}-></li>
+                <li title="电话"><-{$result.tel}-></li>
+                <li title="性别"><-{$result.sex}-></li>
+                <li title="邮箱"><-{$result.email}-></li>
+                <li title="经销商" class="pd1"><-{$result.province}->(<-{$result.oname}->)</li>
+                <li title="驾驶证件号" class="pd2"><input type="text" class="inputclass3" id="number" /></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div  class="btn_yz"><input type="button" onclick="popDiv(event);" /></div>
+        <div class="clear"></div>
+    </div>
+    
+</body>
+</html>

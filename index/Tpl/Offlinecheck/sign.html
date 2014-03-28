@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RAV4-20周年纪念 - 经销商验证系统</title>
+<link href="__PUBLIC__/offline/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/offline/javascript/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/offline/javascript/jquery.bigautocomplete.js"></script>
+<script type="text/javascript">
+function popDiv(event){
+
+    var name = $('#name').val();
+    var tel = $('#tel').val();
+    var sex = $('input[name="sex"]:checked').val();
+    var email = $('#email').val();
+    var code = $('#tt').val();
+    var number = $('#number').val();
+
+
+    if(!name){
+        alert('请您填写姓名！');
+        return false;
+    }
+    if(!tel){
+        alert('请您填写联系电话！');
+        return false;
+    }
+    if(!code){
+        alert('请您填写经销商信息');
+        return false;
+    }
+    if(!number){
+        alert('请您填写驾驶证件号');
+        return false;
+    }
+
+
+    $.ajax({
+        type : 'POST',
+        url : '__URL__/add',
+        cache : false,
+        data : '&name=' + name + '&tel=' + tel + '&sex=' + sex + '&email=' + email + '&code=' + code + '&number=' + number + '&source=线下经销商',
+        success : function(ress){
+            if(ress == 1){
+
+                var top = ($(window).height() - $("#popDiv").height())/2;
+                var left = ($(window).width() - $("#popDiv").width())/2;
+                var scrollTop = $(document).scrollTop();
+                var scrollLeft = $(document).scrollLeft();
+
+
+                var e=window.event || event;
+
+                if(e.stopPropagation){
+                    e.stopPropagation();
+                }else{
+                    e.cancelBubble = true;
+                }
+                $("#hidebg").css({
+                    display: "block"
+                });
+                //$("#popDiv").show();
+                $("#popDiv").css( { position : 'absolute', 'top' : top + scrollTop, left : left + scrollLeft } ).show();
+
+            }else if(ress == 2){
+                alert('您已参加此活动，请勿重复申请！');
+            }else{
+                alert('添加失败，请您稍后再试！');
+            }
+
+        }
+    });
+
+
+    }  
+//文本框自动补全
+$(function(){
+    $("#tt").bigAutocomplete({url:'__URL__/getoffline'});
+})
+</script>
+</head>
+<body>
+<!--遮罩层1  start-->
+<div id="popDiv" class="mydiv" style="display:none;"> 	
+     
+    <div class="divimg"> 
+    <h2><img src="__PUBLIC__/offline/images/text2.png" /></h2>
+    <div class="btn_fanhui"><a href="__URL__">返回首页</a></div>
+    
+    </div> 
+</div>                                   
+<div id="hidebg" class="hidebg" style="display:none"></div> 
+<!--遮罩层1  end--> 
+
+	<div class="baoming">
+    	<div class="bmcon">
+            <ul class="ul_bm">
+            	<li title="姓名"><input type="text" class="inputclass4" id="name" /></li>
+                <li title="电话"><input type="text" class="inputclass4" id="tel" /></li>
+                <li title="性别"><input type="radio" name="sex" value="男" checked="checked" />&nbsp;男&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" value="女" />&nbsp;女</li>
+                <li title="邮箱"><input type="text" class="inputclass4" id="email" /></li>
+                <li title="网点编码"><input type="text" class="inputclass4" id="tt"/></li>
+                <li title="驾驶证件号" class="last"><input type="text" class="inputclass4" id="number" /></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div  class="btn_bm"><input type="button" onclick="popDiv(event);" /></div>
+        <div class="clear"></div>
+    </div>
+    
+</body>
+</html>

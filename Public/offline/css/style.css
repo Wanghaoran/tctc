@@ -1,0 +1,87 @@
+*{word-wrap:break-word;}
+body,input,button,select,textarea{font:12px/1.5 'Microsoft Yahei','Simsun';color:#444;}
+textarea{resize:none;}
+body,ul,ol,li,dl,dd,p,h1,h2,h3,h4,h5,h6,form,fieldset,.pr,.pc{margin:0;padding:0;}
+table{empty-cells:show;border-collapse:collapse;}caption,th{text-align:left;font-weight:400;}
+dl,ul li,.xl li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:1em;}
+em,cite,i{font-style:normal;}
+a{color:#333;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+table{border-collapse:collapse;border-spacing:0;}
+input{outline: none;}/* 屏蔽文本框高亮 */
+textarea {outline: none;} 
+/* 清理浮动 */
+.clear:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clear {zoom:1; /* for IE6 IE7 */}
+.clear5{ clear:both; height:5px;}
+.clear10{ clear:both; height:10px;}
+.clear20{ clear:both; height:20px;}
+/*去掉超链接虚线框*/
+a{outline:none;}
+a:active{noOutline:expression(this.onFocus=this.blur());}
+:focus{outline:0;}
+
+.fl{ float:left;}
+.fr{ float:right;}
+.mr40{ margin-right:40px;}
+
+body{ background:#fff;}
+html, body {height: 100%;}
+
+.login{ width:499px; height:209px; padding-top:84px; background:url(../images/loginbg.png) top center no-repeat; position:absolute; left:50%; top:50%; margin-left:-250px; margin-top:-146px;}
+	ul.ul_login{ padding:55px 0 0 169px; width:238px; height:293px; background:url(../images/ulloginbg.png) no-repeat;}
+	ul.ul_login li{ width:234px; height:35px; margin-bottom:18px;}
+	ul.ul_login li input.inputclass{ width:224px; height:29px; line-height:29px; padding:3px 5px; border:none; background:none; color:#333; font-size:16px; font-weight:800;}
+	ul.ul_login li.btn{ margin-top:12px; margin-bottom:0; width:238px; height:37px;}
+	ul.ul_login li.btn .btn_login{ display:inline-block; width:238px; height:37px; background:url(../images/btn_login.jpg) bottom no-repeat; border:none; cursor:pointer}
+	ul.ul_login li.btn .btn_login:hover{ background:url(../images/btn_login.jpg) top no-repeat;}
+.login2{ width:622px; height:440px; padding-top:84px; background:url(../images/loginbg.png) top center no-repeat; position:absolute; left:50%; top:50%; margin-left:-311px; margin-top:-220px;}	
+	.logincon{ padding-top:45px;}
+	.boxbg{width:291px; height:301px; background:url(../images/boxbg.jpg) no-repeat;}
+	.adminbox{ width:248px; height:78px; margin:21px auto; background:url(../images/loginbg2.png) no-repeat;}
+	ul.ul_login2{ padding-left:54px;}
+	ul.ul_login2 li{ width:194px; height:35px; margin-bottom:8px;}
+	ul.ul_login2 li.two{ margin-bottom:0;}
+	ul.ul_login2 li input.inputclass2{ width:184px; height:29px; line-height:29px; padding:5px 5px 1px; border:none; background:none; color:#333; font-size:16px; font-weight:800;}
+	a.btn_yanzheng{ display:inline-block; width:238px; height:157px; background:url(../images/btn_yanzheng.png) top center no-repeat; margin-left:25px; text-indent:-9999em;}
+	a.btn_yanzheng:hover{ background:url(../images/btn_yanzheng.png) bottom center no-repeat;}
+	a.btn_baoming{ display:inline-block; width:238px; height:157px; background:url(../images/btn_baoming.png) top center no-repeat; margin:120px 0 0 25px; text-indent:-9999em;}
+	a.btn_baoming:hover{ background:url(../images/btn_baoming.png) bottom center no-repeat;}
+	
+.yanzheng{ width:524px; height:400px; padding-top:84px; background:url(../images/loginbg.png) top center no-repeat; position:absolute; left:50%; top:50%; margin-left:-262px; margin-top:-230px;}
+	.yzcon{ width:331px; height:251px; background:url(../images/yzbox.png) no-repeat; margin:45px auto 40px;}
+	ul.ul_yz{ padding-left:50px;}
+	ul.ul_yz li{ width:281px; height:18px; line-height:18px; color:#000; margin-bottom:27px; font-size:16px; font-weight:800;}
+	ul.ul_yz li.pd1{ width:261px; height:18px; line-height:18px; color:#000; padding-left:20px; margin-bottom:19px;}
+	ul.ul_yz li.pd2{ width:224px; height:35px; line-height:35px; padding-left:57px; margin-bottom:0;}
+	ul.ul_yz li input.inputclass3{ width:214px; height:29px; line-height:29px; padding:5px 5px 1px; border:none; background:none; color:#333; font-size:16px; font-weight:800;}
+	.btn_yz{width:238px; height:36px; margin:0 auto;}
+	.btn_yz input{ width:238px; height:36px; background:url(../images/btn_yz.jpg) top center no-repeat; display:inline-block; border:none; cursor:pointer;}
+	.btn_yz input:hover{ background:url(../images/btn_yz.jpg) bottom center no-repeat;}
+
+.baoming{ width:524px; height:400px; padding-top:84px; background:url(../images/loginbg.png) top center no-repeat; position:absolute; left:50%; top:50%; margin-left:-262px; margin-top:-250px;}
+	.bmcon{ width:420px; height:261px; background:url(../images/baoming.png) no-repeat; margin:40px auto;}
+	ul.ul_bm{ padding-left:116px;}
+	ul.ul_bm li{ width:264px; height:35px; color:#000; margin-bottom:10px; font-size:16px; font-weight:800;}
+	ul.ul_bm li.last{ margin-bottom:0;}
+	ul.ul_bm li input.inputclass4{ width:254px; height:29px; line-height:29px; padding:5px 5px 1px; border:none; background:none; color:#333; font-size:16px; font-weight:800;}
+	.btn_bm{width:238px; height:36px; margin:0 0 0 170px;}
+	.btn_bm input{ width:238px; height:36px; background:url(../images/btn_bm.png) top center no-repeat; display:inline-block; border:none; cursor:pointer;}
+	.btn_bm input:hover{ background:url(../images/btn_bm.png) bottom center no-repeat;}	
+/*浮动层*/	
+.mydiv{ width:441px; height:281px; background:url(../images/popbg.png) no-repeat; z-index:99;  position:absolute;/*FF IE7*/}  
+.hidebg { width:100%; height:100%; background: #000; filter:alpha(opacity=40);/*IE*/ opacity:0.4;/*FF*/ z-index:1; position:absolute;/*IE6*/ position:fixed; left:0; top:0;} 
+.divimg{ clear:both; width:441px; margin:0 auto;}
+.divimg h2{ height:46px; line-height:46px; text-align:center; padding:77px 0 66px 0;}
+.divimg .btn_fanhui{ width:238px; height:37px; margin:0 auto;}
+.divimg .btn_fanhui a{ width:238px; height:37px; display:inline-block; background:url(../images/btn_fanhui.png) top no-repeat; text-indent:-9999em;}
+.divimg .btn_fanhui a:hover{ background:url(../images/btn_fanhui.png) bottom no-repeat;}
+
+.bigautocomplete-layout{display:none;background-color:#FFFFFF;border:1px solid #BCBCBC;position:absolute;z-index:100;max-height:220px;overflow-x:hidden;overflow-y:auto; }
+.bigautocomplete-layout table{border-collapse:collapse;border-spacing:0;background:none repeat scroll 0 0 #FFFFFF;width:100%;cursor:default;}
+.bigautocomplete-layout table tr{background:none repeat scroll 0 0 #FFFFFF;}
+.bigautocomplete-layout .ct{background:none repeat scroll 0 0 #D2DEE8 !important;}
+.bigautocomplete-layout div{word-wrap:break-word;word-break:break-all;padding:1px 5px;}
+	

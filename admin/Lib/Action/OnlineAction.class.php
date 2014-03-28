@@ -4,9 +4,9 @@ class OnlineAction extends CommonAction {
   public function index(){
       $where = array();
       if(!empty($_POST['name'])){
-          $where['name'] = array('LIKE', '%' . $_POST['name'] . '%');
+          $where['u.name'] = array('LIKE', '%' . $_POST['name'] . '%');
       }
-      R('Public/select', array('User', 'id,name,sex,tel,add_1,add_2,add_3,applyTime,status,offline,source', $where, 'applyTime DESC'));
+      R('Public/select', array('User', 'u.id,u.name,u.sex,u.tel,u.add_1,u.add_2,u.add_3,u.applyTime,u.status,u.offline,u.source,o.name as oname,u.offlineTime,u.province', $where, 'applyTime DESC', 'tctc_offline as o ON u.province = o.uid', 'u'));
       $this -> display();
   }
 
@@ -16,7 +16,7 @@ class OnlineAction extends CommonAction {
 
     public function pushDLR(){
         $User = M('User');
-        $result = $User -> field('name,sex,tel,add_1,add_2,add_3') -> find($this -> _get('id', 'intval'));
+        $result = $User -> field('name,sex,tel,add_1,add_2,add_3,province') -> find($this -> _get('id', 'intval'));
         $this -> assign('result', $result);
         $this -> display();
     }

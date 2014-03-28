@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RAV4-20周年纪念 - 经销商验证系统</title>
+<link href="__PUBLIC__/offline/css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__PUBLIC__/offline/javascript/jquery.js"></script>
+
+    <script>
+        var check = function(){
+            var username = $('#username').val();
+            var tel = $('#tel').val();
+
+            $.ajax({
+                type : 'POST',
+                url : '__URL__/offlinecheck',
+                data : '&username=' + username + '&tel=' + tel,
+                dataType : 'json',
+                success : function(ress){
+                    if(ress != 'null'){
+                        location.href='__URL__/validation/uid/' + ress['id'];
+                    }else{
+                        alert('此用户不存在！');
+                        return;
+                    }
+                }
+
+            });
+        }
+    </script>
+</head>
+<body>
+	<div class="login2">
+    	<div class="logincon">
+            <div class="boxbg fl mr40">
+            	<div class="adminbox">
+                	<ul class="ul_login2">
+                    	<li><input type="text" class="inputclass2" id="username" /></li>
+                        <li class="two"><input type="text" class="inputclass2" id="tel" /></li>
+                    </ul>
+                </div>
+                <a onclick="check();" class="btn_yanzheng">验证</a>
+            </div>
+            <div class="boxbg fl">
+            	<a href="__URL__/sign" class="btn_baoming">报名</a>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+</body>
+</html>

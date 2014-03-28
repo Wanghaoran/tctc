@@ -35,12 +35,14 @@
 		     <th width="5"><div title="" class="gridCol"><input type="checkbox" class="checkboxCtrl" group="ids"></div></th>
 			<th width="20">申请人姓名</th>
               <th width="20">性别</th>
-              <th width="30">联系电话</th>
-			<th width="100">地址</th>
+              <th width="20">联系电话</th>
+			<th width="60">地址</th>
 			<th width="30">申请时间</th>
 			<th width="30">状态</th>
 			<th width="30">来源</th>
 			<th width="30">线下验证</th>
+			<th width="50">线下经销商</th>
+			<th width="30">线下验证时间</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -63,7 +65,14 @@
                 <else/>
                 <td style="color: blue;">已验证</td>
             </eq>
-			</tr>
+            <td><-{$r.oname}->(<-{$r.province|default="无"}->)</td>
+            <empty name="r.offlineTime">
+                <td></td>
+                <else/>
+                <td><-{$r.offlineTime|date="Y-m-d H:i:s", ###}-></td>
+            </empty>
+
+        </tr>
 		</volist>
 		</tbody>
 	</table>
