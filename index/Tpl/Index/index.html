@@ -172,7 +172,13 @@
         })
 
 
+        //关闭灰色 jQuery 遮罩
+        function closeBg2() {
+            $("#hidebg2,#popDiv2").hide();
+        }
+
     </script>
+
     <script type="text/javascript" src="__PUBLIC__/index/javascript/scrolltopcontrol.js"></script>
 </head>
 <body>
@@ -190,7 +196,7 @@
 
 <!--遮罩层12  start-->
 <div id="popDiv2" class="mydiv2" style="display:none;">
-
+    <a href="javascript:closeBg2()" class="icon_close"></a>
     <div class="divimg2">
         <h2>一汽丰田顾客个人信息保护基本方针</h2>
 
