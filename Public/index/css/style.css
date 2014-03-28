@@ -34,7 +34,9 @@ html, body {height: 100%;}
 		a.btn_bm{ width:183px; height:82px; background:url(../images/btn_bm.png) center no-repeat; display:inline-block; margin:430px 0 0 20px;}
 		a.btn_bm:hover{ background:url(../images/btn_bmon.png) center no-repeat;}
 	.midbox{ width:100%; height:593px; background:url(../images/midbg.jpg) center no-repeat;}
-		.midtext{ color:#fff; font-size:12px; width:400px; margin:0 auto; padding:150px 40px 0 560px; line-height:200%;}
+		.midboxcon{ width:1000px; margin:0 auto;}
+		.player{ width:345px; height:229px; padding:65px 0 0 200px;}
+		.midtext{ color:#fff; font-size:12px; width:400px; margin:0 auto; padding:150px 0 0 20px; line-height:200%;}
 	.thirdbox{ width:100%; height:585px; background:#272727 url(../images/thirdbg.jpg) top center no-repeat;}
 		.tablebox{ width:1000px; height:585px; margin:0 auto; background:url(../images/tablebg.png) center no-repeat;}
 			.table_left{ float:left; width:500px;}

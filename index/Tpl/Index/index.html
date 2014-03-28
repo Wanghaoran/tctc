@@ -8,6 +8,8 @@
     <script type="text/javascript">uaredirect("__ROOT__/index/mobile");</script>
     <script type="text/javascript" src="__PUBLIC__/index/javascript/jquery.js"></script>
     <script type="text/javascript" src="__PUBLIC__/index/javascript/jsAddress.js"></script>
+    <!--视频JS-->
+    <script type="text/javascript" src="__PUBLIC__/index/javascript/swfobject.js"></script>
     <script type="text/javascript">
         ;(function($){
             $.fn.hcheckbox=function(options){
@@ -247,9 +249,23 @@
 </div>
 <!--简介-->
 <div class="midbox">
-    <div class="midtext">
-        美国1号公路是沿太平洋海滨修建的一条公路，1号公路从墨西哥往北一直延伸到加州北部，是一条风光如画的海滨公路。不过，通常在自驾者眼中，1号公路是特指北起旧金山金门桥南接洛杉矶的这一段约460英里（740公里）的公路。由于得天独厚的地理环境，她的一边是碧波万顷的太平洋，一边则是陡峭高耸的悬崖山脉，或者偶尔映入眼帘的一望无边的大片草地，风景美不胜收，被称为美国最美丽的一条公路。
+    <div class="midboxcon">
+        <div class="fl player">
+            <p id="player1"></p>
+            <script type="text/javascript">
+                var s1 = new SWFObject("__PUBLIC__/other/flvplayer.swf","single","345","229","7");
+                s1.addParam("allowfullscreen","true");
+                s1.addVariable("file","__PUBLIC__/other/ad.flv");
+                s1.addVariable("image","__PUBLIC__/index/images/preview.jpg"); s1.addVariable("width","345");
+                s1.addVariable("height","229");
+                s1.write("player1");
+            </script>
+        </div>
+        <div class="fl midtext">
+            美国1号公路是沿太平洋海滨修建的一条公路，1号公路从墨西哥往北一直延伸到加州北部，是一条风光如画的海滨公路。不过，通常在自驾者眼中，1号公路是特指北起旧金山金门桥南接洛杉矶的这一段约460英里（740公里）的公路。由于得天独厚的地理环境，她的一边是碧波万顷的太平洋，一边则是陡峭高耸的悬崖山脉，或者偶尔映入眼帘的一望无边的大片草地，风景美不胜收，被称为美国最美丽的一条公路。
+        </div>
     </div>
+    <div class="clear"></div>
 </div>
 <!--填写表单-->
 <div class="thirdbox" id="ht_m2">
