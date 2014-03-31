@@ -25,7 +25,7 @@ class OnlineAction extends CommonAction {
         if($result['add_1'] == '北京' || $result['add_1'] == '天津' || $result['add_1'] == '上海' || $result['add_1'] == '重庆'){
             $where['city'] = $where['province'];
         }else{
-            $where['city'] = $result['add_2'];
+            $where['city'] = str_replace('市', '', $result['add_2']);
         }
 
         $result_offline = $Offline -> field('uid,name,province,regoin,city,county') -> where($where) -> select();
