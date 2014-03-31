@@ -55,7 +55,7 @@
 			  <td><-{$r.add_1}-> - <-{$r.add_2}-> - <-{$r.add_3}-></td>
 			  <td><-{$r.applyTime|date="Y-m-d H:i:s", ###}-></td>
               <eq name="r.status" value="1">
-                  <td><a href="__URL__/pushDLR/id/<-{$r.id}->" target="dialog" style="color: red;">未推送</a></td>
+                  <td><a href="__URL__/pushDLR/id/<-{$r.id}->" target="dialog" style="color: red;" height="500">未推送</a></td>
                   <else/>
                   <td style="color: green;">已推送</td>
               </eq>

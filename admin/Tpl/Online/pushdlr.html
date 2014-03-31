@@ -1,3 +1,9 @@
+<script>
+    var clicks = function(ress){
+        $('#dealers').val(ress);
+    }
+</script>
+
 <div class="page">
 	<div class="pageContent">
         <form method="post" action="__URL__/checkpush/callbackType/closeCurrent/navTabId/online_index" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)">
@@ -32,9 +38,53 @@
             </div>
             <div class="unit">
                 <label>经销商编码：</label>
-                <input type="text" name="dealers" class="required" value="<-{$result.province}->" />
+                <input type="text" name="dealers" id="dealers" class="required" value="<-{$result.province}->" />
             </div>
+
+
+
+            <hr style="clear: both;margin-top: 40px;">
+
+            <div class="unit">
+
+
+                <table class="list" width="98%">
+                    <thead>
+                    <tr>
+                        <th>经销商编码</th>
+                        <th>经销商名称</th>
+                        <th>所在省份</th>
+                        <th>所在地区</th>
+                        <th>所在城市</th>
+                        <th>所在区县</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <volist name="result_offline" id="ro">
+                            <tr>
+                            <td><-{$ro.uid}-></td>
+                            <td><-{$ro.name}-></td>
+                            <td><-{$ro.province}-></td>
+                            <td><-{$ro.regoin}-></td>
+                            <td><-{$ro.city}-></td>
+                            <td><-{$ro.county}-></td>
+                            <td><a href="javascript:clicks('<-{$ro.uid}->');" style="color: blue;">点击添加</a></td>
+                            </tr>
+                        </volist>
+                    </tbody>
+                </table>
+
+
+
+            </div>
+
+
 	</div>
+
+
 
 <input type="hidden" name="id" value="<-{$Think.get.id}->" />
 		<div class="formBar">

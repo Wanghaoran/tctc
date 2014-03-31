@@ -18,6 +18,19 @@ class OnlineAction extends CommonAction {
         $User = M('User');
         $result = $User -> field('name,sex,tel,add_1,add_2,add_3,province') -> find($this -> _get('id', 'intval'));
         $this -> assign('result', $result);
+        //Find Offline
+        $Offline = M('Offline');
+        $where = array();
+        $where['province'] = $result['add_1'];
+        if($result['add_1'] == '北京' || $result['add_1'] == '天津' || $result['add_1'] == '上海' || $result['add_1'] == '重庆'){
+            $where['city'] = $where['province'];
+        }else{
+            $where['city'] = $result['add_2'];
+        }
+
+        $result_offline = $Offline -> field('uid,name,province,regoin,city,county') -> where($where) -> select();
+
+        $this -> assign('result_offline', $result_offline);
         $this -> display();
     }
 
