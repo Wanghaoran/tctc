@@ -82,6 +82,10 @@
                     alert('请您填写联系电话！');
                     return false;
                 }
+                if(tel.length != 11){
+                    alert('联系电话位数不符合规范！');
+                    return false;
+                }
                 if(!add_1 || !add_2 || !add_3){
                     alert('请填写完整的地址信息');
                     return false;

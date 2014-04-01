@@ -25,6 +25,10 @@ function popDiv(event){
         alert('请您填写联系电话！');
         return false;
     }
+    if(tel.length != 11){
+        alert('联系电话位数不符合规范！');
+        return false;
+    }
     if(!code){
         alert('请您填写经销商信息');
         return false;
