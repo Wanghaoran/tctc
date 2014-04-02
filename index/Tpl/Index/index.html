@@ -68,6 +68,8 @@
             //弹出遮罩层1
             $(".submit").click(function(event){
 
+                _smq.push(['custom','首页','提交']);
+
                 var name = $('#name').val();
                 var sex = $('input[name="sex"]:checked').val();
                 var tel = $('#tel').val();
@@ -117,6 +119,7 @@
                             $("#hidebg").css({
                                 display: "block"
                             });
+                            _smq.push(['pageview', '/成功注册','成功注册']);
                             //$("#popDiv").show();
                             $("#popDiv").css( { position : 'absolute', 'top' : top + scrollTop, left : left + scrollLeft } ).show();
                         }else if(ress == 2){
@@ -186,6 +189,20 @@
     </script>
 
     <script type="text/javascript" src="__PUBLIC__/index/javascript/scrolltopcontrol.js"></script>
+
+
+    <script type="text/javascript">
+        var _smq = _smq || [];
+        _smq.push(['_setAccount', '34cd031', new Date()]);
+        _smq.push(['pageview']);
+
+        (function() {
+            var sm = document.createElement('script'); sm.type = 'text/javascript'; sm.async = true;
+            sm.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdnmaster.com/sitemaster/sm.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sm, s);
+        })();
+    </script>
+
 </head>
 <body>
 <!--遮罩层1  start-->
@@ -193,7 +210,7 @@
 
     <div class="divimg">
         <h2><img src="__PUBLIC__/index/images/poptext1.png" /></h2>
-        <div class="divbtn"><a onclick="alert('分享活动尚未开始，敬请期待！');" class="login_sina2"></a><a onclick="alert('分享活动尚未开始，敬请期待！');" class="login_qq2"></a></div>
+        <div class="divbtn"><a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);alert('分享活动尚未开始，敬请期待！');" class="login_sina2"></a><a onclick="_smq.push(['custom','成功注册页面','QQ账号登录']);alert('分享活动尚未开始，敬请期待！');" class="login_qq2"></a></div>
         <h3><img src="__PUBLIC__/index/images/poptext2.png" /></h3>
     </div>
 </div>
@@ -249,13 +266,13 @@
 
 <!--报名-->
 <div class="header">
-    <div class="btnbox"><a href="#ht_m2" class="btn_bm" title="报名"></a></div>
+    <div class="btnbox"><a onclick="_smq.push(['custom','首页','报名参与']);" href="#ht_m2" class="btn_bm" title="报名"></a></div>
 </div>
 <!--简介-->
 <div class="midbox">
     <div class="midboxcon">
         <div class="fl player">
-            <p id="player1"></p>
+            <p id="player1" onclick="_smq.push(['custom','首页','播放按钮']);"></p>
             <script type="text/javascript">
                 var s1 = new SWFObject("__PUBLIC__/other/flvplayer.swf","single","345","229","7");
                 s1.addParam("allowfullscreen","true");
