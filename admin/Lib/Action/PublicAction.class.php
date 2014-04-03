@@ -149,7 +149,7 @@ class PublicAction extends Action {
   public function select($modelName, $field = '', $where = array(), $order = '', $join = '', $alias = ''){
     $model = M($modelName);
     import('ORG.Util.Page');
-    $count = $model -> where($where)-> count();
+    $count = $model -> alias($alias) -> where($where)-> count();
     if(! empty ( $_REQUEST ['listRows'] )){
       $listRows = $_REQUEST ['listRows'];
     } else {
