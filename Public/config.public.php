@@ -25,4 +25,8 @@ return array(
         '__UPLOAD__' => __ROOT__ . '/Upload',
     ),
 
+    'WB_AKEY' => '1078875116',
+    'WB_SKEY' => '049e47c2708456ccacd40d77ae96ba2b',
+    'WB_CALLBACK_URL' => 'http://1000kmpacificrav4.tctc.com.cn/index/weibocheck',
+
 );
