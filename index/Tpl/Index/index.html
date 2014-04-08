@@ -188,7 +188,36 @@
 
     </script>
 
+    <script>
+        //微博成功返回绑定弹出层
+        function popDiv3(){
+            var top = ($(window).height() - $("#popDiv3").height())/2;
+            var left = ($(window).width() - $("#popDiv3").width())/2;
+            var scrollTop = $(document).scrollTop();
+            var scrollLeft = $(document).scrollLeft();
+
+
+            var e=window.event || event;
+
+            if(e.stopPropagation){
+                e.stopPropagation();
+            }else{
+                e.cancelBubble = true;
+            }
+            $("#hidebg,#popDiv").hide();
+            $("#hidebg2,#popDiv2").hide();
+            $("#hidebg3").css({
+                display: "block"
+            });
+            //$("#popDiv").show();
+            $("#popDiv3").css( { position : 'absolute', 'top' : top + scrollTop, left : left + scrollLeft } ).show();
+        }
+
+    </script>
+
     <script type="text/javascript" src="__PUBLIC__/index/javascript/scrolltopcontrol.js"></script>
+    <!--美化滚动条-->
+    <script type="text/javascript" src="__PUBLIC__/index/javascript/scrollbar.js"></script>
 
 
     <script type="text/javascript">
@@ -263,6 +292,23 @@
 </div>
 <div id="hidebg2" class="hidebg" style="display:none"></div>
 <!--遮罩层2  end-->
+
+
+<!--遮罩层3  微博成功返回绑定弹出层 start-->
+<div id="popDiv3" class="mydiv" style="display: none;">
+    <div class="divimg3">
+        <h2><img src="__PUBLIC__/index/images/poptext3.png" /></h2>
+        <ul class="bangding">
+            <li class="li1">linyame</li>
+            <li class="li2"><input type="text" class="inputclass4" /></li>
+            <li class="li3"><input type="text" class="inputclass4" /></li>
+        </ul>
+        <div class="btn_div3"><a href="#" class="btn_bd">绑定</a><a href="#" class="btn_cancel">取消</a></div>
+    </div>
+</div>
+<div id="hidebg3" class="hidebg" style="display:none"></div>
+<!--遮罩层3  微博成功返回绑定弹出层 end-->
+
 
 <!--报名-->
 <div class="header">
@@ -372,4 +418,5 @@
 <div class="clear20"></div>
 <div style="display: none;"><script src="http://s5.cnzz.com/stat.php?id=5858445&web_id=5858445" language="JavaScript"></script></div>
 </body>
+
 </html>

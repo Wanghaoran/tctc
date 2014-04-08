@@ -2,9 +2,11 @@
 class IndexAction extends Action {
 
     public function index(){
+        /*
         if(!empty($_GET['uid'])){
             dump($_GET['uid']);
         }
+        */
         $this -> display();
     }
 

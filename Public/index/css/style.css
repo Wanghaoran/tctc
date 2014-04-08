@@ -18,6 +18,7 @@ textarea {outline: none;}
 .clear5{ clear:both; height:5px;}
 .clear10{ clear:both; height:10px;}
 .clear20{ clear:both; height:20px;}
+.clear30{ clear:both; height:30px;}
 /*去掉超链接虚线框*/
 a{outline:none;}
 a:active{noOutline:expression(this.onFocus=this.blur());}
@@ -99,3 +100,92 @@ ul.ultable li select{display: block;}
 ul.ultable li .select_box{font-size:14px;color:#333;width:104px; height:38px; line-height:38px; border: none; margin-right:16px; text-align:center; position:relative;}
 
 a.icon_close{ width:40px; height:40px; background:url(../images/icon_close.png) no-repeat; position:absolute; right:-25px; top:-25px;}
+
+/*绑定窗口*/
+.divimg3{ clear:both; width:640px; margin:0 auto; text-align:center;}
+.divimg3 h2{ text-align:left; padding:30px 0 0 30px; height:60px;}
+
+ul.bangding{ padding-left:87px; width:174px; height:130px; background:url(../images/bangdingbg.png) no-repeat; margin:0 auto;}
+ul.bangding li{ width:174px;height:36px; }
+ul.bangding li.li1{ height:18px; line-height:18px; color:#fff; font-size:16px; font-weight:800; padding-bottom:22px; text-align:left;}
+ul.bangding li.li2{ padding-bottom:19px;}
+ul.bangding li.li3{ padding-bottom:0px;}
+	.inputclass4{ border:none; background:none; width:172px; height:36px; line-height:36px; color:#333; padding:0 0 0 2px; font-size:16px; font-weight:800;} 
+.btn_div3{ width:300px; margin:20px auto;}
+	a.btn_bd{ display:inline-block; width:140px; height:39px; background:url(../images/btn_bd.png) bottom no-repeat; text-indent:-9999em; margin-right:20px;}
+	a.btn_bd:hover{ background:url(../images/btn_bd.png) top no-repeat;}
+	a.btn_cancel{ display:inline-block; width:140px; height:39px; background:url(../images/btn_cancel.png) bottom no-repeat; text-indent:-9999em;}
+	a.btn_cancel:hover{ background:url(../images/btn_cancel.png) top no-repeat;}
+	
+ul.travel_list{ width:1338px; padding-top:20px;}
+ul.travel_list li{ float:left; margin-right:20px; position:relative;} 
+ul.travel_list li a{ width:248px; height:248px; display:inline-block;}
+ul.travel_list li a img{ width:246px; height:246px; border:none; margin:1px;}
+ul.travel_list li a.btn_zan{ display:none; width:23px; height:23px; background:url(../images/icon_zan.png) center no-repeat; text-indent:-9999em; position:absolute; top:-23px; right:0;}
+ul.travel_list li:hover{ border:#d8813b 1px solid; width:246px; height:246px;}
+ul.travel_list li:hover a img{ margin:0;}
+ul.travel_list li:hover a.btn_zan{ display:block;}
+ul.travel_list li.five{ margin-right:0;}
+ul.travel_list li div{ width:248px; height:30px; line-height:30px; text-align:left; font-size:14px; color:#fff;}
+
+ul.tabnav{ width:258px; float:left; padding-left:320px;}
+ul.tabnav li{ float:left; width:116px; height:40px; margin-right:13px;}
+ul.tabnav li a.new_upload{ display:inline-block; width:116px; height:40px; background:url(../images/tabnavbg.png) left top no-repeat; text-indent:-9999em;}
+ul.tabnav li a.new_upload:hover{ background:url(../images/tabnavbg.png) left bottom no-repeat;}
+ul.tabnav li.choice a.new_upload{ background:url(../images/tabnavbg.png) left bottom no-repeat;}
+ul.tabnav li a.hign_prase{ display:inline-block; width:116px; height:40px; background:url(../images/tabnavbg.png) right bottom no-repeat; text-indent:-9999em;}
+ul.tabnav li a.hign_prase:hover{ background:url(../images/tabnavbg.png) right top no-repeat;}
+ul.tabnav li.choice a.hign_prase{ background:url(../images/tabnavbg.png) right top no-repeat;}
+
+ul.shareright{ float:right;}
+ul.shareright li{ float:right; height:40px; background:#fff; margin-right:10px;}
+ul.shareright li a.btn_fanhui{ display:inline-block; width:90px; margin-right:10px; height:40px; background:url(../images/btn_fanhui.png) center no-repeat; text-indent:-9999em;}
+ul.shareright li a.btn_user{ display:inline-block; height:40px; line-height:40px; background:url(../images/btn_user.png) left center no-repeat; margin-left:15px; padding:0 15px 0 30px; font-size:20px; color:#de4832; text-align:left; text-decoration:none;}
+ul.shareright li a.btn_share{ display:inline-block; width:200px; height:40px; background:url(../images/btn_right3.png) center no-repeat; text-indent:-9999em;}
+
+ul.fenye{ float:right;}
+ul.fenye li{ float:left; width:86px; height:30px;background:url(../images/fenyebgon.png) no-repeat; margin-right:20px;}
+ul.fenye li.lidisable{ background:url(../images/fenyebg.png) no-repeat;}
+ul.fenye li a{ display:inline-block; width:86px; height:30px; text-indent:-9999em;}
+ul.fenye li a.btn_pre{ background:url(../images/text_pre.png) center no-repeat;}
+ul.fenye li a.btn_next{ background:url(../images/text_next.png) center no-repeat;}
+
+/*浮动层——上传*/	
+.mydiv4{ width:960px; border:#dd8640 10px solid; height:450px; background:#272727; text-align: center; font-size: 12px; z-index:99;  position:absolute;/*FF IE7*/    }  
+.divimg4{ clear:both; width:910px; margin:30px auto; text-align:center;}
+.divimg4_left{ float:left; width:414px; margin-right:16px;}
+.divimg4_left .imgbox{ width:414px; height:266px; margin-bottom:10px;}
+.divimg4_left .liulan{ width:414px; position:relative;}
+.divimg4_left  .liulan_input {position: absolute;left:0px;top:0; width:414px; height:40px;cursor: pointer;Opacity: 0;filter: alpha(opacity=0);}
+.divimg4_left  .txt12 { border:none; text-align:left; width:292px; overflow: hidden; height:40px; line-high:40px; float: left; padding-left:40px; vertical-align: middle; background:url(../images/filebg.png) no-repeat; margin-right:10px;}
+	/*浏览 按钮样式*/
+	.btn_liulan a{ float:left; width:70px; height:40px; font-size:12px; line-height:40px; display:inline-block; text-align:center; cursor:pointer; margin:0 auto; background:url(../images/btn_liulan.png) bottom center no-repeat; color:#676767; text-indent:-9999em;}
+	.btn_liulan a:link , .btn_liulan a:visited { background:url(../images/btn_liulan.png) bottom center no-repeat;}
+	.btn_liulan a:hover{ background:url(../images/btn_liulan.png) top center no-repeat; text-decoration:none;}
+	.btn_liulan a:active{ background:url(../images/btn_liulan.png) top center no-repeat; text-decoration:none;}
+.divimg4_right{ float:left; width:480px;}
+	.gushi_title{ width:480px; height:40px; background:#fff; line-height:40px; font-size:16px; font-weight:800; margin-bottom:10px; text-align:left;}
+	.gushi_title span{ float:left; background:url(../images/text_title.png) center no-repeat; width:100px; height:40px; border-right:#ddd 1px solid; margin-right:10px;}
+	.gushi_type{ width:480px; height:40px; background:#fff; line-height:40px; font-size:16px; font-weight:800; margin-bottom:10px;}
+	.gushi_type span{ float:left; background:url(../images/text_type.png) center no-repeat; width:100px; height:40px; border-right:#ddd 1px solid;  margin-right:10px;}
+	.gushi_content{ width:440px; height:176px; background:#fff; padding:20px; line-height:150%; text-align:left; font-size:14px; margin-bottom:10px;}
+	.selectclass{ width:369px; height:40px; border:none; background:none; font-size:16px; font-weight:800;}
+	.btn_upload{ float:right; margin:10px 0 0 0; width:116px; height:40px; display:inline-block; border:none; background:url(../images/btn_upload.png) bottom center no-repeat; cursor:pointer;}
+	.btn_upload:hover{ background:url(../images/btn_upload.png) top center no-repeat;}
+	
+.travel_content{ width:830px; background:#fff; margin:20px auto;}
+	.travel_title{width:784px; height:30px; padding:35px 0; margin:0 auto; font-size:24px; font-weight:800; text-align:left;}
+	.travel_title span{ font-size:14px; font-weight:400; color:#666; float:right; margin-top:10px; height:20px; line-height:20px;}
+	.travel_img{ width:784px; margin:0 auto;}
+	.travel_info{width:784px; margin:20px auto;}
+	/* 美化滚动条 style */
+	.scr_con {position:relative;height:160px;width:700px;margin:20px auto;}
+	#dv_scroll{position:absolute;height:140px;overflow:hidden;width:670px;}
+	#dv_scroll .Scroller-Container{width:100%;}
+	#dv_scroll_bar {position:absolute;right:0;top:10px;width:14px;height:140px;border-left:1px solid #B5B5B5;}
+	#dv_scroll_bar .Scrollbar-Track{position:absolute;left:0;top:20px;width:14px;height:140px;}
+	#dv_scroll_bar .Scrollbar-Handle{position:absolute;left:-7px;top:0;width:13px;height:29px;overflow:hidden;background:url(../images/barbg.png) no-repeat;cursor:pointer;}
+	#dv_scroll_text {position:absolute;}
+	.gushi_about{ padding:10px; font-size:14px; font-weight:800;}
+
+
