@@ -63,9 +63,14 @@ class IndexAction extends Action {
 
             $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
             $uid_get = $c->get_uid();
-            dump($uid_get);
-            $uid = $uid_get['uid'];
-            dump($uid);
+            if($uid_get['error'] && $uid_get['error_code'] == 21321){
+                die('新浪微博登录功能正在等待微博方面审核，请稍后再试试');
+            }else if($uid_get['error'] && $uid_get['error_code'] != 21321){
+                die($uid_get['error']);
+            }else{
+                $uid = $uid_get['uid'];
+                dump($uid);
+            }
         }else{
            die('授权失败');
         }
