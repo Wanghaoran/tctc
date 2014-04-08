@@ -63,6 +63,7 @@ class IndexAction extends Action {
 
             $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
             $uid_get = $c->get_uid();
+            dump($c);
             $uid = $uid_get['uid'];
             dump($uid);
         }else{
