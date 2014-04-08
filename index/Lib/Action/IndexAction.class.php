@@ -2,6 +2,9 @@
 class IndexAction extends Action {
 
     public function index(){
+        if(!empty($_GET['uid'])){
+            dump($_GET['uid']);
+        }
         $this -> display();
     }
 
@@ -69,7 +72,18 @@ class IndexAction extends Action {
                 die($uid_get['error']);
             }else{
                 $uid = $uid_get['uid'];
-                dump($uid);
+                //查找此uid是否已经绑定账户
+                $User = M('User');
+                $user_info = $User -> field('id,name') -> where(array('weiboId' => $uid)) -> find();
+                //存在此用户直接写session
+                if($user_info){
+                    session('tctc_uid', $user_info['id']);
+                    session('tctc_name', $user_info['name']);
+                    redirect('Index/index');
+                    //不存在则跳转到首页，并绑定用户
+                }else{
+                    redirect('Index/index/uid' . $uid);
+                }
             }
         }else{
            die('授权失败');
