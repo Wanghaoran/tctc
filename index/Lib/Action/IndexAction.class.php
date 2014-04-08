@@ -82,7 +82,7 @@ class IndexAction extends Action {
                     redirect('Index/index');
                     //不存在则跳转到首页，并绑定用户
                 }else{
-                    redirect('Index/index/uid' . $uid);
+                    redirect('Index/index/uid/' . $uid);
                 }
             }
         }else{
