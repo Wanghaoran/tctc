@@ -220,6 +220,7 @@
             var name = $('#binding_name').val();
             var tel = $('#binding_tel').val();
             var uid = '<-{$uid}->';
+            var type = '<-{$type}->';
             if(!name){
                 alert('请您填写姓名！');
                 return false;
@@ -228,7 +229,17 @@
                 alert('请您填写联系电话！');
                 return false;
             }
-            alert(uid);
+
+            $.ajax({
+                type : 'POST',
+                url : '__URL__/bindingcheck',
+                cache : false,
+                data : '&name=' + name + '&tel=' + tel + '&uid=' + uid + '&type='. type,
+                success : function(ress){
+                    console.log(ress);
+                }
+            });
+
         }
     </script>
 

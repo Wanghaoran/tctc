@@ -101,4 +101,8 @@ class IndexAction extends Action {
            die('授权失败');
         }
     }
+
+    public function bindingcheck(){
+        dump($_POST);
+    }
 }
