@@ -2,11 +2,20 @@
 class IndexAction extends Action {
 
     public function index(){
-        /*
-        if(!empty($_GET['uid'])){
-            dump($_GET['uid']);
+
+        //新浪微博登录
+        if(!empty($_GET['uid']) && $_GET['type'] == 'weibo'){
+            include_once( './saetv2.ex.class.php' );
+
+            $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token'] );
+            $uid_get = $c->get_uid();
+            $uid = $uid_get['uid'];
+            $user_message = $c->show_user_by_id($uid);//根据ID获取用户等基本信息
+            dump($user_message);
+
+
         }
-        */
+
         $this -> display();
     }
 

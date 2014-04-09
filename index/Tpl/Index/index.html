@@ -214,6 +214,21 @@
     <!--美化滚动条-->
     <script type="text/javascript" src="__PUBLIC__/index/javascript/scrollbar.js"></script>
 
+    <script>
+        //绑定验证
+        var bindinguser = function(){
+            var name = $('#binding_name').val();
+            var tel = $('#binding_tel').val();
+            if(!name){
+                alert('请您填写姓名！');
+                return false;
+            }
+            if(!tel){
+                alert('请您填写联系电话！');
+                return false;
+            }
+        }
+    </script>
 
     <script type="text/javascript">
         var _smq = _smq || [];
@@ -295,10 +310,10 @@
         <h2><img src="__PUBLIC__/index/images/poptext3.png" /></h2>
         <ul class="bangding">
             <li class="li1">linyame</li>
-            <li class="li2"><input type="text" class="inputclass4" /></li>
-            <li class="li3"><input type="text" class="inputclass4" /></li>
+            <li class="li2"><input type="text" id="binding_name" class="inputclass4" /></li>
+            <li class="li3"><input type="text" id="binding_tel" class="inputclass4" /></li>
         </ul>
-        <div class="btn_div3"><a href="#" class="btn_bd">绑定</a><a href="#" class="btn_cancel">取消</a></div>
+        <div class="btn_div3"><a onclick="bindinguser();" class="btn_bd">绑定</a><a href="__ROOT__" class="btn_cancel">取消</a></div>
     </div>
 </div>
 <div id="hidebg3" class="hidebg" style="display:none"></div>
@@ -355,7 +370,7 @@
                     </li>
 
                     <li class="li3">
-                        <div id="chklist" class="fl"><input type="checkbox" id="check" value='1' /><label>&nbsp;</label></div><div class="fl"><a class="mztk">免责条款</a></div>
+                        <div id="chklist" class="fl"><input type="checkbox" id="check" value='1' /><label>&nbsp;</label></div><div class="fl"><a class="mztk" title="免责条款"></a></div>
                     </li>
                     <div class="clear"></div>
                 </ul>
@@ -369,41 +384,41 @@
 <!--分享-->
 <div class="sharebox">
 
-    <div class="hidebg3" style="display:block"><h2>故事分享尚未开始</h2><h3>敬请期待...</h3></div>
+    <!-- <div class="hidebg3" style="display:block"><h2>故事分享尚未开始</h2><h3>敬请期待...</h3></div>-->
 
     <div class="sharecon">
-        <div class="sharetitle"><a href="#" class="login_qq"></a><a href="#" class="login_sina"></a></div>
+        <div class="sharetitle"><a href="#" class="login_qq"></a><a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);" href="__URL__/weibologin" target="_blank" class="login_sina"></a></div>
         <div class="clear20"></div>
         <ul class="sharelist">
             <li>
                 <div class="listbox">
-                    <a href="#"><img src="__PUBLIC__/index/images/share1.jpg" /></a>
+                    <a><img src="__PUBLIC__/index/images/share1.jpg" /></a>
                     <div class="listbox_title"><h2><img src="__PUBLIC__/index/images/text1.png" /></h2>9天的美国之旅结束了，印象最深的一天当属在1号公路自驾的哪一天。也许因为它的名字叫1号公路，所以我的...</div>
                 </div>
             </li>
             <li>
                 <div class="listbox">
-                    <a href="#"><img src="__PUBLIC__/index/images/share2.jpg" /></a>
+                    <a><img src="__PUBLIC__/index/images/share2.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text2.png" /></h2></div>
                 </div>
                 <div class="listbox">
-                    <a href="#"><img src="__PUBLIC__/index/images/share3.jpg" /></a>
+                    <a><img src="__PUBLIC__/index/images/share3.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text3.png" /></h2></div>
                 </div>
             </li>
             <li>
                 <div class="listbox">
-                    <a href="#"><img src="__PUBLIC__/index/images/share4.jpg" /></a>
+                    <a><img src="__PUBLIC__/index/images/share4.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text4.png" /></h2></div>
                 </div>
                 <div class="listbox">
-                    <a href="#"><img src="__PUBLIC__/index/images/share5.jpg" /></a>
+                    <a><img src="__PUBLIC__/index/images/share5.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text5.png" /></h2></div>
                 </div>
             </li>
             <li>
                 <div class="listbox">
-                    <a href="#"><img src="__PUBLIC__/index/images/share6.jpg" /></a>
+                    <a><img src="__PUBLIC__/index/images/share6.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text6.png" /></h2></div>
                 </div>
             </li>
