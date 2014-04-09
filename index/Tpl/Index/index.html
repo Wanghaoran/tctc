@@ -220,7 +220,7 @@
             var name = $('#binding_name').val();
             var tel = $('#binding_tel').val();
             var uid = '<-{$uid}->';
-            var type = '<-{$type}->';
+            var typess = '<-{$type}->';
             if(!name){
                 alert('请您填写姓名！');
                 return false;
@@ -234,7 +234,7 @@
                 type : 'POST',
                 url : '__URL__/bindingcheck',
                 cache : false,
-                data : '&name=' + name + '&tel=' + tel + '&uid=' + uid + '&type='. type,
+                data : '&name=' + name + '&tel=' + tel + '&uid=' + uid + '&type='. typess,
                 success : function(ress){
                     console.log(ress);
                 }
