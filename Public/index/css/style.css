@@ -109,8 +109,8 @@ a.icon_close{ width:40px; height:40px; background:url(../images/icon_close.png) 
 ul.bangding{ padding-left:87px; width:274px; height:130px; background:url(../images/bangdingbg.png) no-repeat; margin:0 auto;}
 ul.bangding li{ width:274px;height:36px; text-align:left; }
 ul.bangding li.li1{ height:40px; color:#fff; font-size:14px; font-weight:400; text-align:left;}
-ul.bangding li.li1 .admin_sina{ background:url(../images/icon_sina.png) right center no-repeat; padding-right:45px; padding-bottom:20px; height:20px; line-height:20px; display:inline-block;}
-ul.bangding li.li1 .admin_qq{ background:url(../images/icon_qq.png) right center no-repeat; padding-right:32px; padding-bottom:20px; height:20px; line-height:20px; display:inline-block;}
+ul.bangding li.li1 .admin_sina{ background:url(../images/icon_sina.png) right center no-repeat; padding-right:30px; margin-bottom:20px; height:20px; line-height:20px; display:inline-block;}
+ul.bangding li.li1 .admin_qq{ background:url(../images/icon_qq.png) right center no-repeat; padding-right:22px; margin-bottom:20px; height:20px; line-height:20px; display:inline-block;}
 ul.bangding li.li2{ padding-bottom:19px;}
 ul.bangding li.li3{ padding-bottom:0px;}
 	.inputclass4{ border:none; background:none; width:172px; height:36px; line-height:36px; color:#333; padding:0 0 0 2px; font-size:16px; font-weight:800;} 
@@ -174,7 +174,7 @@ ul.fenye li a.btn_next{ background:url(../images/text_next.png) center no-repeat
 	.gushi_type span{ float:left; background:url(../images/text_type.png) center no-repeat; width:100px; height:40px; border-right:#ddd 1px solid;  margin-right:10px;}
 	.gushi_content{ width:440px; height:176px; background:#fff; padding:20px; line-height:150%; text-align:left; font-size:14px; margin-bottom:10px;}
 	.gushi_content textarea.areaclass{width:440px; height:176px; border:none; line-height:150%; text-align:left; font-size:14px;}
-	.selectclass{ width:369px; height:40px; border:none; background:none; font-size:16px; font-weight:800;}
+	.selectclass{ width:369px; height:40px; line-height:40px; border:none; background:none; font-size:16px; font-weight:800;}
 	.btn_upload{ float:right; margin:10px 0 0 0; width:116px; height:40px; display:inline-block; border:none; background:url(../images/btn_upload.png) bottom center no-repeat; cursor:pointer;}
 	.btn_upload:hover{ background:url(../images/btn_upload.png) top center no-repeat;}
 	
