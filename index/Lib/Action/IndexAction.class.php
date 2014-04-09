@@ -13,6 +13,7 @@ class IndexAction extends Action {
             $user_message = $c->show_user_by_id($uid);//根据ID获取用户等基本信息
             $this -> assign('user_message', $user_message);
             $this -> assign('type', $this -> _get('type'));
+            $this -> assign('uid', $this -> _get('uid'));
 
         }
 

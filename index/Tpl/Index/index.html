@@ -219,6 +219,7 @@
         var bindinguser = function(){
             var name = $('#binding_name').val();
             var tel = $('#binding_tel').val();
+            var uid = '<-{$uid}->';
             if(!name){
                 alert('请您填写姓名！');
                 return false;
@@ -227,6 +228,7 @@
                 alert('请您填写联系电话！');
                 return false;
             }
+            alert(uid);
         }
     </script>
 
