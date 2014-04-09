@@ -68,7 +68,8 @@ html, body {height: 100%;}
 		.hidebg3 h3{ font-size:48px; font-weight:800; color:#f77105; height:100px; line-height:100px; text-align:center;}
 		.sharecon{ width:1338px; margin:0 auto;}
 		.sharetitle{ width:1325px; height:41px; padding-top:24px; background:url(../images/sharetitle.png) left center no-repeat;}
-		a.login_sina{ float:right; display:inline-block; width:165px; height:41px; background:url(../images/btn_login.png) left center no-repeat;}
+		.sharetitle a.btn_fanhui{float:right; display:inline-block; width:90px; height:40px; padding-right:15px; background:#fff url(../images/btn_fanhui.png) center no-repeat; text-indent:-9999em;}
+		a.login_sina{ float:right; display:inline-block; width:165px; height:41px; background:url(../images/btn_login.png) left center no-repeat; margin-left:18px;}
 		a.login_qq{ float:right;display:inline-block; width:165px; height:41px; background:url(../images/btn_login.png) right center no-repeat; margin-left:18px;}
 		
 		ul.sharelist{ width:1338px; margin:0 auto;}

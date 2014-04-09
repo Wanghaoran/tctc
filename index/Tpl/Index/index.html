@@ -277,6 +277,20 @@
         })();
     </script>
 
+    <script>
+        //列表页展示
+        function showhide(){
+            $('#share_home').hide();
+            $('#share_list').show();
+        }
+        //列表页返回
+        function listback(){
+            $('#share_list').hide();
+            $('#share_home').show();
+        }
+
+    </script>
+
 </head>
 <body>
 <!--遮罩层1  start-->
@@ -460,7 +474,7 @@
 
     <!-- <div class="hidebg3" style="display:block"><h2>故事分享尚未开始</h2><h3>敬请期待...</h3></div>-->
 
-    <div class="sharecon">
+    <div class="sharecon" id="share_home">
         <div class="sharetitle">
             <notempty name="Think.session.tctc_uid">
                 <ul class="shareright">
@@ -477,33 +491,33 @@
             <li>
                 <div class="listbox">
 
-                    <a><img src="__PUBLIC__/index/images/share1.jpg" /></a>
+                    <a onclick="showhide();" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share1.jpg" /></a>
                     <div class="listbox_title"><h2><img src="__PUBLIC__/index/images/text1.png" /></h2>9天的美国之旅结束了，印象最深的一天当属在1号公路自驾的哪一天。也许因为它的名字叫1号公路，所以我的...</div>
                 </div>
             </li>
             <li>
                 <div class="listbox">
-                    <a><img src="__PUBLIC__/index/images/share2.jpg" /></a>
+                    <a href="javascript:void(0);" onclick="showhide();"><img src="__PUBLIC__/index/images/share2.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text2.png" /></h2></div>
                 </div>
                 <div class="listbox">
-                    <a><img src="__PUBLIC__/index/images/share3.jpg" /></a>
+                    <a href="javascript:void(0);" onclick="showhide();"><img src="__PUBLIC__/index/images/share3.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text3.png" /></h2></div>
                 </div>
             </li>
             <li>
                 <div class="listbox">
-                    <a><img src="__PUBLIC__/index/images/share4.jpg" /></a>
+                    <a href="javascript:void(0);" onclick="showhide();"><img src="__PUBLIC__/index/images/share4.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text4.png" /></h2></div>
                 </div>
                 <div class="listbox">
-                    <a><img src="__PUBLIC__/index/images/share5.jpg" /></a>
+                    <a href="javascript:void(0);" onclick="showhide();"><img src="__PUBLIC__/index/images/share5.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text5.png" /></h2></div>
                 </div>
             </li>
             <li>
                 <div class="listbox">
-                    <a><img src="__PUBLIC__/index/images/share6.jpg" /></a>
+                    <a href="javascript:void(0);" onclick="showhide();"><img src="__PUBLIC__/index/images/share6.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text6.png" /></h2></div>
                 </div>
             </li>
@@ -511,6 +525,114 @@
     </div>
 </div>
 <div class="clear20"></div>
+
+
+<!--列表页 start -->
+<div class="sharecon" id="share_list" style="display:none;">
+    <div class="sharetitle">
+        <notempty name="Think.session.tctc_uid">
+            <ul class="shareright">
+                <li><a href="javascript:;" onclick="popDiv4();" class="btn_share">分享</a></li>
+                <li><a class="btn_user"><-{$Think.session.tctc_name}-></a></li>
+                <li><a onclick="listback();" class="btn_fanhui">返回</a></li>
+            </ul>
+            <else/>
+            <a href="#" class="login_qq"></a>
+            <a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);" href="__URL__/weibologin" target="_blank" class="login_sina"></a>
+            <li><a onclick="listback();" class="btn_fanhui">返回</a></li>
+        </notempty>
+        <ul class="tabnav">
+            <li><a href="#" class="new_upload">最新上传</a></li>
+            <li class="choice"><a href="#" class="hign_prase">最高点赞</a></li>
+        </ul>
+    </div>
+    <div class="clear20"></div>
+    <ul class="travel_list">
+        <li>
+            <a href="#" class="btn_zan">赞</a>
+            <a href="javascript:;" onclick="showcontent();">
+                <img src="__PUBLIC__/index/images/img_share1.png" />
+            </a>
+            <div>[游记/2014-04-02]一次特殊的旅行</div>
+        </li>
+        <li>
+            <a href="#" class="btn_zan">赞</a>
+            <a href="javascript:;" onclick="showcontent();">
+                <img src="__PUBLIC__/index/images/img_share2.png" />
+            </a>
+            <div>[游记/2014-04-02]一次特殊的旅行</div>
+        </li>
+        <li>
+            <a href="#" class="btn_zan">赞</a>
+            <a href="javascript:;" onclick="showcontent();">
+                <img src="__PUBLIC__/index/images/img_share3.png" />
+            </a>
+            <div>[游记/2014-04-02]一次特殊的旅行</div>
+        </li>
+        <li>
+            <a href="#" class="btn_zan">赞</a>
+            <a href="javascript:;" onclick="showcontent();">
+                <img src="__PUBLIC__/index/images/img_share4.png" />
+            </a>
+            <div>[游记/2014-04-02]一次特殊的旅行</div>
+        </li>
+        <li class="five">
+            <a href="#" class="btn_zan">赞</a>
+            <a href="javascript:;" onclick="showcontent();">
+                <img src="__PUBLIC__/index/images/img_share5.png" />
+            </a>
+            <div>[游记/2014-04-02]一次特殊的旅行</div>
+        </li>
+        <div class="clear30"></div>
+        <li>
+            <a href="#" class="btn_zan">赞</a>
+            <a href="javascript:;" onclick="showcontent();">
+                <img src="__PUBLIC__/index/images/img_share6.png" />
+            </a>
+            <div>[游记/2014-04-02]一次特殊的旅行</div>
+        </li>
+        <li>
+            <a href="#" class="btn_zan">赞</a>
+            <a href="javascript:;" onclick="showcontent();">
+                <img src="__PUBLIC__/index/images/img_share7.png" />
+            </a>
+            <div>[游记/2014-04-02]一次特殊的旅行</div>
+        </li>
+        <li>
+            <a href="#" class="btn_zan">赞</a>
+            <a href="javascript:;" onclick="showcontent();">
+                <img src="__PUBLIC__/index/images/img_share8.png" />
+            </a>
+            <div>[游记/2014-04-02]一次特殊的旅行</div>
+        </li>
+        <li>
+            <a href="#" class="btn_zan">赞</a>
+            <a href="javascript:;" onclick="showcontent();">
+                <img src="__PUBLIC__/index/images/img_share9.png" />
+            </a>
+            <div>[游记/2014-04-02]一次特殊的旅行</div>
+        </li>
+        <li class="five">
+            <a href="#" class="btn_zan">赞</a>
+            <a href="javascript:;" onclick="showcontent();">
+                <img src="__PUBLIC__/index/images/img_share10.png" />
+            </a>
+            <div>[游记/2014-04-02]一次特殊的旅行</div>
+        </li>
+        <div class="clear30"></div>
+    </ul>
+    <div class="clear"></div>
+    <ul class="fenye">
+        <li class="lidisable"><a href="#" class="btn_pre">上一页</a></li>
+        <li><a href="#" class="btn_next">下一页</a></li>
+    </ul>
+    <div class="clear20"></div>
+</div>
+<div class="clear20"></div>
+<!--列表页 end -->
+
+
+
 <div style="display: none;"><script src="http://s5.cnzz.com/stat.php?id=5858445&web_id=5858445" language="JavaScript"></script></div>
 </body>
 <notempty name="Think.get.uid">
