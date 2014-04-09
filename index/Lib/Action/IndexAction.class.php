@@ -90,7 +90,7 @@ class IndexAction extends Action {
                 if($user_info){
                     session('tctc_uid', $user_info['id']);
                     session('tctc_name', $user_info['name']);
-                    redirect(_PHP_FILE_ . '/Index/index');
+                    redirect(_PHP_FILE_ . '/Index/index#sharebox');
                     //不存在则跳转到首页，并绑定用户
                 }else{
                     redirect(_PHP_FILE_ . '/Index/index/uid/' . $uid . '/type/weibo');
