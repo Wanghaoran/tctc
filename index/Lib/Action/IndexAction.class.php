@@ -7,7 +7,7 @@ class IndexAction extends Action {
         if(!empty($_GET['uid']) && $_GET['type'] == 'weibo'){
             include_once( './saetv2.ex.class.php' );
 
-            $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token'] );
+            $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
             $uid_get = $c->get_uid();
             $uid = $uid_get['uid'];
             $user_message = $c->show_user_by_id($uid);//根据ID获取用户等基本信息
