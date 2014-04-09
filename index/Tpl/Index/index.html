@@ -309,7 +309,11 @@
     <div class="divimg3">
         <h2><img src="__PUBLIC__/index/images/poptext3.png" /></h2>
         <ul class="bangding">
-            <li class="li1">linyame</li>
+            <eq name="type" value="weibo">
+            <li class="li1"><-{$user_message.user_message}->(微博)</li>
+            <else/>
+            <li class="li1">测试用户(QQ)</li>
+            </eq>
             <li class="li2"><input type="text" id="binding_name" class="inputclass4" /></li>
             <li class="li3"><input type="text" id="binding_tel" class="inputclass4" /></li>
         </ul>
