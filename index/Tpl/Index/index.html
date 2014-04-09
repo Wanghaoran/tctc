@@ -289,6 +289,18 @@
             $('#share_home').show();
         }
 
+        //详情页展示
+        function showcontent(){
+            $('#share_list').hide();
+            $('#share_content').show();
+        }
+
+        //详情页返回
+        function contentback(){
+            $('#share_content').hide();
+            $('#share_list').show();
+        }
+
     </script>
 
 </head>
@@ -630,6 +642,53 @@
 </div>
 <div class="clear20"></div>
 <!--列表页 end -->
+
+<!--展示页-->
+<div class="sharecon" id="share_content" style="display:none;">
+    <div class="sharetitle">
+        <notempty name="Think.session.tctc_uid">
+            <ul class="shareright">
+                <li><a href="javascript:;" onclick="popDiv4();" class="btn_share">分享</a></li>
+                <li><a class="btn_user"><-{$Think.session.tctc_name}-></a></li>
+                <li><a onclick="contentback();" class="btn_fanhui">返回</a></li>
+            </ul>
+            <else/>
+            <a href="#" class="login_qq"></a>
+            <a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);" href="__URL__/weibologin" target="_blank" class="login_sina"></a>
+            <li><a onclick="contentback();" class="btn_fanhui">返回</a></li>
+        </notempty>
+    </div>
+    <div class="clear20"></div>
+    <div class="travel_content">
+        <div class="travel_title"><span>作者：linyame&nbsp;&nbsp;2014-04-02</span>一次特殊的旅行</div>
+        <div class="clear20"></div>
+        <div class="travel_img"><img src="__PUBLIC__/index/images/img_gushi.jpg" /></div>
+        <div class="clear20"></div>
+        <div class="travel_info">
+            <!--美化滚动条start-->
+            <div class="scr_con">
+                <div id="dv_scroll">
+                    <div id="dv_scroll_text" class="Scroller-Container">
+                        <div class="gushi_about">
+                            开了一个小时我们就进入圣塔芭芭拉区域，最后来到圣塔芭芭拉传教堂。我们到达的时候是早上十一点过一点，人还很少。其实后来发现，传教堂供游客停车的停车场是早上十一点才开门的，所以我们到达的时间应该是刚刚好。我们来传教堂主要是为了欣赏建筑，并不是来搞什么宗教活动，所以没有买票进到里面参观。另一个原因没有进到里面，就是我并不打算在这里停留很久，只是打算稍微看看，照几张相而已。圣塔芭芭拉传教堂是圣塔芭芭拉市最著名的建筑之一，之前我们来这里旅游忘记到这里来看看了，这次算是补全了。
+                            开了一个小时我们就进入圣塔芭芭拉区域，最后来到圣塔芭芭拉传教堂。我们到达的时候是早上十一点过一点，人还很少。其实后来发现，传教堂供游客停车的停车场是早上十一点才开门的，所以我们到达的时间应该是刚刚好。我们来传教堂主要是为了欣赏建筑，并不是来搞什么宗教活动，所以没有买票进到里面参观。另一个原因没有进到里面，就是我并不打算在这里停留很久，只是打算稍微看看，照几张相而已。圣塔芭芭拉传教堂是圣塔芭芭拉市最著名的建筑之一，之前我们来这里旅游忘记到这里来看看了，这次算是补全了。
+                            开了一个小时我们就进入圣塔芭芭拉区域，最后来到圣塔芭芭拉传教堂。我们到达的时候是早上十一点过一点，人还很少。其实后来发现，传教堂供游客停车的停车场是早上十一点才开门的，所以我们到达的时间应该是刚刚好。我们来传教堂主要是为了欣赏建筑，并不是来搞什么宗教活动，所以没有买票进到里面参观。另一个原因没有进到里面，就是我并不打算在这里停留很久，只是打算稍微看看，照几张相而已。圣塔芭芭拉传教堂是圣塔芭芭拉市最著名的建筑之一，之前我们来这里旅游忘记到这里来看看了，这次算是补全了。
+                        </div><!--about end-->
+                    </div>
+                </div><!--dv_scroll end-->
+                <div id="dv_scroll_bar">
+                    <div id="dv_scroll_track" class="Scrollbar-Track">
+                        <div class="Scrollbar-Handle"></div>
+                    </div>
+                </div><!--dv_scroll_bar end-->
+            </div>
+            <!--美化滚动条 end-->
+        </div>
+        <div class="clear20"></div>
+    </div>
+
+</div>
+
 
 
 
