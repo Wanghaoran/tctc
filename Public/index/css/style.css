@@ -183,16 +183,14 @@ ul.fenye li a.btn_next{ background:url(../images/text_next.png) center no-repeat
 	.travel_title{width:784px; height:30px; padding:35px 0; margin:0 auto; font-size:24px; font-weight:800; text-align:left;}
 	.travel_title span{ font-size:14px; font-weight:400; color:#666; float:right; margin-top:10px; height:20px; line-height:20px;}
 	.travel_img{ width:784px; margin:0 auto;}
-	.travel_info{width:784px; margin:20px auto;}
+	.travel_info{width:784px; margin:0px auto; padding-bottom:40px;}
 	/* 美化滚动条 style */
-	.scr_con {position:relative;height:160px;width:700px;margin:20px auto;}
-	#dv_scroll{position:absolute;height:140px;overflow:hidden;width:670px;}
-	#dv_scroll .Scroller-Container{width:100%;}
-	#dv_scroll_bar {position:absolute;right:0;top:10px;width:14px;height:140px;border-left:1px solid #B5B5B5;}
-	#dv_scroll_bar .Scrollbar-Track{position:absolute;left:0;top:20px;width:14px;height:140px;}
-	#dv_scroll_bar .Scrollbar-Handle{position:absolute;left:-7px;top:0;width:13px;height:29px;overflow:hidden;background:url(../images/barbg.png) no-repeat;cursor:pointer;}
-	#dv_scroll_text {position:absolute;}
-	.gushi_about{ padding:10px; font-size:14px; font-weight:800;}
+	/* bd */
+	.travel_info .bd{width:700px;margin:0px auto;height:160px;}
+	.travel_info .top{height:153px;width:650px;overflow:hidden;float:left;padding:10px;}
+	.travel_info .top div#ul{width:650px; font-size:14px; font-weight:400; color:#666; line-height:150%;}
+	.travel_info .scroll{width:14px;margin-left:10px;height:173px;float:left; border-left:1px solid #B5B5B5;position:relative;}
+	.travel_info .scroll p{width:13px;height:13px;background:url(../images/barbg.png);cursor:auto;left:-7px;top:1px;position:absolute;}
 	
 	a.btn_quxiao{ float:right; margin:10px 0 0 10px; width:116px; height:40px; display:inline-block; border:none; background:url(../images/btn_quxiao.png) bottom center no-repeat; cursor:pointer; text-indent:-9999em;}
 	a.btn_quxiao:hover{ background:url(../images/btn_quxiao.png) top center no-repeat;}
