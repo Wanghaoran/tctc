@@ -14,8 +14,9 @@ class IndexAction extends Action {
             $this -> assign('user_message', $user_message);
             $this -> assign('type', $this -> _get('type'));
             $this -> assign('uid', $this -> _get('uid'));
-
         }
+
+        dump($_SESSION);
 
         $this -> display();
     }
@@ -103,6 +104,30 @@ class IndexAction extends Action {
     }
 
     public function bindingcheck(){
-        dump($_POST);
+        $User = M('User');
+        $where = array();
+        $where['name'] = $this -> _post('name');
+        $where['tel'] = $this -> _post('tel');
+        $user_info = $User -> field('id,name') -> where($where) -> find();
+        if(!$user_info){
+            echo 1;
+            return;
+        }
+        $data = array();
+        $data['id'] = $user_info['id'];
+        if($_POST['type'] == 'weibo'){
+            $data['weiboId'] = $this -> _post('uid');
+        }else{
+
+        }
+        if($User -> save($data)){
+            session('tctc_uid', $user_info['id']);
+            session('tctc_name', $user_info['name']);
+            echo 2;
+            return;
+        }else{
+            echo 3;
+            return;
+        }
     }
 }

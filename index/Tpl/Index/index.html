@@ -236,7 +236,14 @@
                 cache : false,
                 data : '&name=' + name + '&tel=' + tel + '&uid=' + uid + '&type=' + typess,
                 success : function(ress){
-                    console.log(ress);
+                    if(ress == 1){
+                        alert('此用户不存在！');
+                    }else if(ress == 2){
+                        alert('绑定账号成功！');
+                        window.location = 'http://1000kmpacificrav4.tctc.com.cn/';
+                    }else if(ress == 3){
+                        alert('更新账号信息失败！');
+                    }
                 }
             });
 
