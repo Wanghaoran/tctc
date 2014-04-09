@@ -84,7 +84,7 @@ class IndexAction extends Action {
                     redirect(_PHP_FILE_ . '/Index/index');
                     //不存在则跳转到首页，并绑定用户
                 }else{
-                    redirect(_PHP_FILE_ . '/Index/index/uid/' . $uid);
+                    redirect(_PHP_FILE_ . '/Index/index/uid/' . $uid . '/type/weibo');
                 }
             }
         }else{

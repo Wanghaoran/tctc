@@ -58,7 +58,7 @@ html, body {height: 100%;}
 				 label.checkbox {cursor:pointer;background:url(../images/checkbg.png) center no-repeat; width:20px; height:37px; line-height:37px; display:inline-block; } 
 				label.checked { background:url(../images/checkbgon.png) center no-repeat} 
 				label.disabled{ background:url(../images/checkbg.png) center no-repeat;}
-				a.mztk{ display:inline-block; margin-left:58px; width:56px; height:37px; line-height:37px; cursor:pointer; text-indent:-9999em;}
+				a.mztk{ display:inline-block; margin-left:58px; width:56px; height:37px; line-height:37px; cursor:pointer; }
 				a.submit{ width:140px; height:39px; display:inline-block; background:url(../images/btn_submit.jpg) bottom center no-repeat;}
 				a:hover.submit{ background:url(../images/btn_submit.jpg) top center no-repeat;}
 			.table_img{ float:left; padding-top:30px; width:500px;}
@@ -75,6 +75,7 @@ html, body {height: 100%;}
 		ul.sharelist li{ float:left; width:332px; height:608px;}
 		.listbox{ position:relative;}
 		.listbox a{ display:inline-block;}
+		.listbox a img{ border:none;}
 		.listbox_title{position:absolute; left:0; bottom:0; width:312px; padding:10px; height:100px; line-height:25px; font-size:12px; color:#fff; filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#66000000',endColorstr='#66000000');background:rgba(0,0,0,.6);}
 		.listbox_title h2{ margin-bottom:10px;}
 		.height2{height:35px;}

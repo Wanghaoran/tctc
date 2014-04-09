@@ -174,10 +174,13 @@
                 }
             });
 
-            document.onclick = function(){
+            document.body.onclick = function(){
                 $("#hidebg,#popDiv").hide();
                 $("#hidebg2,#popDiv2").hide();
+                //$("#hidebg3,#popDiv3").hide();
+                $("#hidebg4,#popDiv4").hide();
             };
+
         })
 
 
@@ -196,14 +199,6 @@
             var scrollTop = $(document).scrollTop();
             var scrollLeft = $(document).scrollLeft();
 
-
-            var e=window.event || event;
-
-            if(e.stopPropagation){
-                e.stopPropagation();
-            }else{
-                e.cancelBubble = true;
-            }
             $("#hidebg,#popDiv").hide();
             $("#hidebg2,#popDiv2").hide();
             $("#hidebg3").css({
@@ -418,5 +413,10 @@
 <div class="clear20"></div>
 <div style="display: none;"><script src="http://s5.cnzz.com/stat.php?id=5858445&web_id=5858445" language="JavaScript"></script></div>
 </body>
+<notempty name="Think.get.uid">
+    <script>
+        popDiv3();
+    </script>
+</notempty>
 
 </html>
