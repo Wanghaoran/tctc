@@ -16,8 +16,6 @@ class IndexAction extends Action {
             $this -> assign('uid', $this -> _get('uid'));
         }
 
-        dump($_SESSION);
-
         $this -> display();
     }
 

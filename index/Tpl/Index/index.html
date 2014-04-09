@@ -178,7 +178,7 @@
                 $("#hidebg,#popDiv").hide();
                 $("#hidebg2,#popDiv2").hide();
                 //$("#hidebg3,#popDiv3").hide();
-                $("#hidebg4,#popDiv4").hide();
+                //$("#hidebg4,#popDiv4").hide();
             };
 
         })
@@ -207,6 +207,21 @@
             //$("#popDiv").show();
             $("#popDiv3").css( { position : 'absolute', 'top' : top + scrollTop, left : left + scrollLeft } ).show();
         }
+
+        //弹出层   上传
+        function popDiv4(){
+            var top = ($(window).height() - $("#popDiv4").height())/2;
+            var left = ($(window).width() - $("#popDiv4").width())/2;
+            var scrollTop = $(document).scrollTop();
+            var scrollLeft = $(document).scrollLeft();
+
+            $("#hidebg4").css({
+                display: "block"
+            });
+            //$("#popDiv").show();
+            $("#popDiv4").css( { position : 'absolute', 'top' : top + scrollTop, left : left + scrollLeft } ).show();
+        }
+
 
     </script>
 
@@ -330,9 +345,9 @@
         <h2><img src="__PUBLIC__/index/images/poptext3.png" /></h2>
         <ul class="bangding">
             <eq name="type" value="weibo">
-            <li class="li1"><-{$user_message.name}->(微博)</li>
+            <li class="li1"><div class="admin_sina"><-{$user_message.name}-></div></li>
             <else/>
-            <li class="li1">测试用户(QQ)</li>
+            <li class="li1"><div class="admin_qq">测试用户(QQ)</div></li>
             </eq>
             <li class="li2"><input type="text" id="binding_name" class="inputclass4" /></li>
             <li class="li3"><input type="text" id="binding_tel" class="inputclass4" /></li>
@@ -342,6 +357,41 @@
 </div>
 <div id="hidebg3" class="hidebg" style="display:none"></div>
 <!--遮罩层3  微博成功返回绑定弹出层 end-->
+
+
+
+<!--遮罩层4  上传故事 start-->
+<div id="popDiv4" class="mydiv4" style="display:none;">
+    <div class="divimg4">
+        <div class="divimg4_left">
+            <div class="imgbox"><img src="__PUBLIC__/index/images/img_upload.png" /></div>
+            <div class="liulan">
+                <input type="file" value="" name="theFile" id="theFile" onchange="txt12.value=this.value" class="liulan_input"/>
+                <input type="text" name="txt12" id="txt12" class="txt12" value="" />
+                <span class="btn_liulan fl"><a href="javascript:void(0);">浏览</a></span>
+            </div>
+        </div>
+        <div class="divimg4_right">
+            <div class="gushi_title"><span>&nbsp;</span><input type="text" class="inputclass6" /></div>
+            <div class="gushi_type"><span>&nbsp;</span>
+                <select class="selectclass">
+                    <option>请选择类型</option>
+                    <option>请选择类型</option>
+                </select>
+            </div>
+            <div class="gushi_content">
+                <textarea class="areaclass"></textarea>
+            </div>
+            <a onclick="$('#hidebg4,#popDiv4').hide();" class="btn_quxiao">取消</a><input type="button" class="btn_upload" />
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div id="hidebg4" class="hidebg" style="display:none"></div>
+
+
+<!--遮罩层4 上传故事 end-->
+
 
 
 <!--报名-->
@@ -411,11 +461,22 @@
     <!-- <div class="hidebg3" style="display:block"><h2>故事分享尚未开始</h2><h3>敬请期待...</h3></div>-->
 
     <div class="sharecon">
-        <div class="sharetitle"><a href="#" class="login_qq"></a><a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);" href="__URL__/weibologin" target="_blank" class="login_sina"></a></div>
+        <div class="sharetitle">
+            <notempty name="Think.session.tctc_uid">
+                <ul class="shareright">
+                    <li><a href="javascript:;" onclick="popDiv4();" class="btn_share">分享</a></li>
+                    <li><a class="btn_user"><-{$Think.session.tctc_name}-></a></li>
+                </ul>
+            <else/>
+                <a href="#" class="login_qq"></a>
+                <a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);" href="__URL__/weibologin" target="_blank" class="login_sina"></a>
+            </notempty>
+        </div>
         <div class="clear20"></div>
         <ul class="sharelist">
             <li>
                 <div class="listbox">
+
                     <a><img src="__PUBLIC__/index/images/share1.jpg" /></a>
                     <div class="listbox_title"><h2><img src="__PUBLIC__/index/images/text1.png" /></h2>9天的美国之旅结束了，印象最深的一天当属在1号公路自驾的哪一天。也许因为它的名字叫1号公路，所以我的...</div>
                 </div>
