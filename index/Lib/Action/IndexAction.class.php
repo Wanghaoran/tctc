@@ -22,6 +22,8 @@ class IndexAction extends Action {
             $arr = json_decode($info, true);
 
             dump($arr);
+            dump($_SESSION);
+            exit();
         }
 
         $this -> display();
