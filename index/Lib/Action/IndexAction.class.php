@@ -15,8 +15,13 @@ class IndexAction extends Action {
             $this -> assign('type', $this -> _get('type'));
             $this -> assign('uid', $this -> _get('uid'));
         }elseif(!empty($_GET['uid']) && $_GET['type'] == 'tencent'){
-            dump($_GET);
-            exit;
+
+            $get_user_info = "https://graph.qq.com/user/get_user_info?" . "access_token=" . $_SESSION['access_token'] . "&oauth_consumer_key=" . $_SESSION["appid"] . "&openid=" . $_SESSION["openid"] . "&format=json";
+
+            $info = file_get_contents($get_user_info);
+            $arr = json_decode($info, true);
+
+            dump($arr);
         }
 
         $this -> display();
