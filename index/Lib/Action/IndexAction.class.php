@@ -101,6 +101,10 @@ class IndexAction extends Action {
         }
     }
 
+    public function tencentcheck(){
+
+    }
+
     public function bindingcheck(){
         $User = M('User');
         $where = array();
