@@ -220,7 +220,7 @@ class IndexAction extends Action {
         if($_POST['type'] == 'weibo'){
             $data['weiboId'] = $this -> _post('uid');
         }else{
-
+            $data['tencentId'] = $this -> _post('uid');
         }
         if($User -> save($data)){
             session('tctc_uid', $user_info['id']);
