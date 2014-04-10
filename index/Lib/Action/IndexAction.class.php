@@ -14,6 +14,9 @@ class IndexAction extends Action {
             $this -> assign('user_message', $user_message);
             $this -> assign('type', $this -> _get('type'));
             $this -> assign('uid', $this -> _get('uid'));
+        }elseif(!empty($_GET['uid']) && $_GET['type'] == 'tencent'){
+            dump($_GET);
+            exit;
         }
 
         $this -> display();
@@ -175,7 +178,20 @@ class IndexAction extends Action {
         }
 
         $openid = $user->openid;
-        dump($openid);
+
+
+        //查找此uid是否已经绑定账户
+        $User = M('User');
+        $user_info = $User -> field('id,name') -> where(array('tencentId' => $openid)) -> find();
+        //存在此用户直接写session
+        if($user_info){
+            session('tctc_uid', $user_info['id']);
+            session('tctc_name', $user_info['name']);
+            redirect(_PHP_FILE_ . '/Index/index#sharebox');
+            //不存在则跳转到首页，并绑定用户
+        }else{
+            redirect(_PHP_FILE_ . '/Index/index/uid/' . $openid . '/type/tencent');
+        }
 
     }
 
