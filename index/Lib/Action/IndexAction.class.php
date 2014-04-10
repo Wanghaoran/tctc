@@ -19,11 +19,13 @@ class IndexAction extends Action {
             $get_user_info = "https://graph.qq.com/user/get_user_info?" . "access_token=" . $_SESSION['access_token'] . "&oauth_consumer_key=" . $_SESSION["appid"] . "&openid=" . $_SESSION["openid"] . "&format=json";
 
             $info = file_get_contents($get_user_info);
-            $arr = json_decode($info, true);
+            $user_message = json_decode($info, true);
+            $user_message['name'] = $user_message['nickname'];
 
-            dump($arr);
-            dump($_SESSION);
-            exit();
+            $this -> assign('user_message', $user_message);
+            $this -> assign('type', $this -> _get('type'));
+            $this -> assign('uid', $this -> _get('uid'));
+
         }
 
         $this -> display();
