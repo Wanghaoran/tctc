@@ -185,6 +185,7 @@ class IndexAction extends Action {
         }
 
         $openid = $user->openid;
+        $_SESSION['openid'] = $openid;
 
 
         //查找此uid是否已经绑定账户
