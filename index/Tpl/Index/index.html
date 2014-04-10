@@ -310,7 +310,9 @@
 
     <div class="divimg">
         <h2><img src="__PUBLIC__/index/images/poptext1.png" /></h2>
-        <div class="divbtn"><a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);" href="__URL__/weibologin" target="_blank" class="login_sina2"></a><a onclick="_smq.push(['custom','成功注册页面','QQ账号登录']);alert('分享活动尚未开始，敬请期待！');" class="login_qq2"></a></div>
+        <div class="divbtn">
+            <a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);" href="__URL__/weibologin" target="_blank" class="login_sina2"></a>
+            <a onclick="_smq.push(['custom','成功注册页面','QQ账号登录']);" href="__URL__/tencentlogin" target="_blank" class="login_qq2"></a></div>
         <h3><img src="__PUBLIC__/index/images/poptext2.png" /></h3>
     </div>
 </div>
@@ -501,7 +503,7 @@
                     <li><a class="btn_user"><-{$Think.session.tctc_name}-></a></li>
                 </ul>
             <else/>
-                <a href="#" class="login_qq"></a>
+                <a onclick="_smq.push(['custom','成功注册页面','QQ账号登录']);" href="__URL__/tencentlogin" target="_blank" class="login_qq"></a>
                 <a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);" href="__URL__/weibologin" target="_blank" class="login_sina"></a>
             </notempty>
         </div>
@@ -556,7 +558,7 @@
                 <li><a onclick="listback();" class="btn_fanhui">返回</a></li>
             </ul>
             <else/>
-            <a href="#" class="login_qq"></a>
+            <a onclick="_smq.push(['custom','成功注册页面','QQ账号登录']);" href="__URL__/tencentlogin" target="_blank" class="login_qq"></a>
             <a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);" href="__URL__/weibologin" target="_blank" class="login_sina"></a>
             <li><a onclick="listback();" class="btn_fanhui">返回</a></li>
         </notempty>
@@ -660,7 +662,7 @@
                 <li><a onclick="contentback();" class="btn_fanhui">返回</a></li>
             </ul>
             <else/>
-            <a href="#" class="login_qq"></a>
+            <a onclick="_smq.push(['custom','成功注册页面','QQ账号登录']);" href="__URL__/tencentlogin" target="_blank" class="login_qq"></a>
             <a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);" href="__URL__/weibologin" target="_blank" class="login_sina"></a>
             <li><a onclick="contentback();" class="btn_fanhui">返回</a></li>
         </notempty>
