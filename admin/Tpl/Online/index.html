@@ -37,7 +37,7 @@
 		<thead>
 		  <tr>
 		     <th width="5"><div title="" class="gridCol"><input type="checkbox" class="checkboxCtrl" group="ids"></div></th>
-			<th width="20">申请人姓名</th>
+			<th width="20">姓名</th>
               <th width="20">性别</th>
               <th width="5">联系电话</th>
 			<th width="80">地址</th>
@@ -96,7 +96,7 @@
 	  
 	  
 		<div class="pages">
-		  <span>共<-{$count}->条</span>
+		  <span>共<-{$count}->条，未推送 <b style="color: red;"><-{$no_push}-></b> 条，未验证 <b style="color: red;"><-{$no_check}-></b> 条</span>
 		</div>
 		<div class="pagination" targetType="navTab" totalCount="<-{$count}->" numPerPage="<-{$listRows}->" pageNumShown="10" currentPage="<-{$currentPage}->"></div>
 	</div>
