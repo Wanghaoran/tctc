@@ -413,7 +413,7 @@ class UploadFile {//类定义开始
         //文件上传成功，进行自定义规则检查
         //检查文件大小
         if(!$this->checkSize($file['size'])) {
-            $this->error = '上传文件大小不符！';
+            $this->error = '上传文件大小不符！请上传小于2MB的图片文件';
             return false;
         }
 
@@ -424,7 +424,7 @@ class UploadFile {//类定义开始
         }
         //检查文件类型
         if(!$this->checkExt($file['extension'])) {
-            $this->error ='上传文件类型不允许';
+            $this->error ='上传文件类型不允许，请上传JPG,JPEG和PNG格式的图片';
             return false;
         }
 

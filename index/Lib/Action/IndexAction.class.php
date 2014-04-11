@@ -234,9 +234,47 @@ class IndexAction extends Action {
     }
 
     public function uploads(){
-        dump($_POST);
-        dump($_FILES);
-//        $this -> show('<script>alert("您的故事已经提交成功，审核后可见，感谢您的参与！");window.location="http://1000kmpacificrav4.tctc.com.cn";</script>');
-//        $this -> display();
+        import('ORG.Net.UploadFile');
+        $upload = new UploadFile();// 实例化上传类
+        $upload -> maxSize  = 2097152 ;// 小于2M
+        $upload -> savePath =  './Uploads/';// 设置附件上传目录
+        $upload -> saveRule = 'uniqid';
+        $upload -> allowExts  = array('jpg', 'png', 'jpeg');// 设置附件上传类型
+        //path
+        $upload -> autoSub = true;
+        $upload -> subType = 'date';
+        $upload -> dateFormat = 'Y-m-d';
+        //thumb
+        $upload -> thumb = true;
+        $upload -> thumbMaxWidth = '246,784';
+        $upload -> thumbMaxHeight = '246,503';
+        $upload -> thumbPrefix = 's_,b_';
+        $upload -> thumbRemoveOrigin = true;
+        if(!$upload->upload()) {// 上传错误提示错误信息
+            $error_info = $upload->getErrorMsg();
+            $this -> show('<script>alert("' . $error_info . '");window.location="http://1000kmpacificrav4.tctc.com.cn/#sharebox";</script>');
+        }else{// 上传成功 获取上传文件信息
+            $info =  $upload->getUploadFileInfo();
+        }
+        //大图地址
+        $b_img = str_replace('/', '/b_', $info[0]['savename']);
+        //小图地址
+        $s_img = str_replace('/', '/s_', $info[0]['savename']);
+
+        $Article = M('Article');
+        $add_data = array();
+        $add_data['uid'] = $_SESSION['tctc_uid'];
+        $add_data['title'] = $this -> _post('title');
+        $add_data['content'] = $this -> _post('content');
+        $add_data['s_img'] = $s_img;
+        $add_data['b_img'] = $b_img;
+        $add_data['addtime'] = time();
+
+        if($Article -> add($add_data)){
+            $this -> show('<script>alert("您的故事已经提交成功，审核后可见，感谢您的参与！");window.location="http://1000kmpacificrav4.tctc.com.cn";</script>');
+        }else{
+            $this -> show('<script>alert("数据添加失败，请稍后重试！");window.location="http://1000kmpacificrav4.tctc.com.cn/#sharebox";</script>');
+        }
+
     }
 }
