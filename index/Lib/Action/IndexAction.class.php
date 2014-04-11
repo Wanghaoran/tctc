@@ -264,6 +264,7 @@ class IndexAction extends Action {
         $Article = M('Article');
         $add_data = array();
         $add_data['uid'] = $_SESSION['tctc_uid'];
+//        $add_data['uid'] = 1;
         $add_data['title'] = $this -> _post('title');
         $add_data['content'] = $this -> _post('content');
         $add_data['type'] = $this -> _post('type');
