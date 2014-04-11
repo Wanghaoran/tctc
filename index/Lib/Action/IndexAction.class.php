@@ -234,7 +234,9 @@ class IndexAction extends Action {
     }
 
     public function uploads(){
-        $this -> show('<script>alert("您的故事已经提交成功，审核后可见，感谢您的参与！");window.location="http://1000kmpacificrav4.tctc.com.cn";</script>');
+        dump($_POST);
+        dump($_FILES);
+//        $this -> show('<script>alert("您的故事已经提交成功，审核后可见，感谢您的参与！");window.location="http://1000kmpacificrav4.tctc.com.cn";</script>');
 //        $this -> display();
     }
 }
