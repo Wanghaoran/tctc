@@ -275,6 +275,9 @@ class IndexAction extends Action {
         if($Article -> add($add_data)){
             $this -> show('<script>alert("您的故事已经提交成功，审核后可见，感谢您的参与！");window.location="http://1000kmpacificrav4.tctc.com.cn";</script>');
         }else{
+            //添加失败伤处上传文件
+            unlink('./Uploads/' . $b_img);
+            unlink('./Uploads/' . $s_img);
             $this -> show('<script>alert("数据添加失败，请稍后重试！");window.location="http://1000kmpacificrav4.tctc.com.cn/#sharebox";</script>');
         }
 

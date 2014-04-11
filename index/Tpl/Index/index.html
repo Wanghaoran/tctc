@@ -301,6 +301,24 @@
             $('#share_list').show();
         }
 
+        //上传故事验证
+        function touploads(){
+            if(!$('#title').val()){
+                alert('标题不能为空！');
+                return false;
+            }
+            if(!$('#content').val()){
+                alert('内容不能为空！');
+                return false;
+            }
+            if(!$('#txt12').val()){
+                alert('图片不能为空！');
+                return false;
+            }
+            return true;
+
+        }
+
     </script>
 
 </head>
@@ -391,7 +409,7 @@
 <!--遮罩层4  上传故事 start-->
 <div id="popDiv4" class="mydiv4" style="display:none;">
     <div class="divimg4">
-        <form action="__URL__/uploads#sharebox" method="post" enctype="multipart/form-data">
+        <form action="__URL__/uploads#sharebox" method="post" enctype="multipart/form-data" onsubmit="return touploads();">
             <div class="divimg4_left">
                 <div class="imgbox"><img src="__PUBLIC__/index/images/img_upload.png" /></div>
                 <div class="liulan">
@@ -413,7 +431,7 @@
                     </select>
                 </div>
                 <div class="gushi_content">
-                    <textarea name="content" class="areaclass"></textarea>
+                    <textarea name="content" id="content" class="areaclass"></textarea>
                 </div>
                 <a onclick="$('#hidebg4,#popDiv4').hide();" class="btn_quxiao">取消</a><input type="submit" value="" class="btn_upload" />
             </div>
@@ -693,6 +711,5 @@
         popDiv3();
     </script>
 </notempty>
-
 
 </html>
