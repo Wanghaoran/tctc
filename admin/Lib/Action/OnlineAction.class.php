@@ -10,7 +10,7 @@ class OnlineAction extends CommonAction {
       if(!empty($_POST['tel'])){
           $where['u.tel'] = array('LIKE', '%' . $_POST['tel'] . '%');
       }
-      R('Public/select', array('User', 'u.id,u.name,u.sex,u.tel,u.add_1,u.add_2,u.add_3,u.applyTime,u.status,u.offline,u.source,o.name as oname,u.offlineTime,u.province', $where, 'applyTime DESC', 'tctc_offline as o ON u.province = o.uid', 'u'));
+      R('Public/select', array('User', 'u.id,u.name,u.sex,u.tel,u.add_1,u.add_2,u.add_3,u.applyTime,u.status,u.offline,u.source,o.name as oname,u.offlineTime,u.province,u.weiboId,u.tencentId', $where, 'applyTime DESC', 'tctc_offline as o ON u.province = o.uid', 'u'));
       $this -> display();
   }
 

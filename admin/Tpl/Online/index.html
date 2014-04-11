@@ -39,14 +39,16 @@
 		     <th width="5"><div title="" class="gridCol"><input type="checkbox" class="checkboxCtrl" group="ids"></div></th>
 			<th width="20">申请人姓名</th>
               <th width="20">性别</th>
-              <th width="20">联系电话</th>
-			<th width="60">地址</th>
+              <th width="5">联系电话</th>
+			<th width="80">地址</th>
 			<th width="30">申请时间</th>
 			<th width="30">状态</th>
 			<th width="30">来源</th>
 			<th width="30">线下验证</th>
-			<th width="50">线下经销商</th>
+			<th width="60">线下经销商</th>
 			<th width="30">线下验证时间</th>
+			<th width="30">新浪微博</th>
+			<th width="30">腾讯QQ</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -74,6 +76,16 @@
                 <td></td>
                 <else/>
                 <td><-{$r.offlineTime|date="Y-m-d H:i:s", ###}-></td>
+            </empty>
+            <empty name="r.weiboId">
+                <td style="color: red;">未关联</td>
+                <else/>
+                <td style="color: green;">已关联</td>
+            </empty>
+            <empty name="r.tencentId">
+                <td style="color: red;">未关联</td>
+                <else/>
+                <td style="color: green;">已关联</td>
             </empty>
 
         </tr>
