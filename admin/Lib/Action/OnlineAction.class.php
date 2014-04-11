@@ -109,8 +109,44 @@ class OnlineAction extends CommonAction {
         }else{
             $this -> error($return_code[$data]);
         }
+    }
 
 
+    public function share(){
+        $where = array();
+        if(!empty($_POST['name'])){
+            $where['u.name'] = array('LIKE', '%' . $_POST['name'] . '%');
+        }
+        R('Public/select', array('Article', 'a.id,a.title,a.type,a.content,a.addtime,a.status,u.name as uname', $where, 'addtime DESC', 'tctc_user as u ON a.uid = u.id', 'a'));
+        $this -> display();
+    }
+
+    public function delshare(){
+        $where = array();
+        $where['id'] = array('in', $_POST['ids']);
+        $result = M('Article') -> field('b_img,s_img') -> where($where) -> select();
+        foreach($result as $value){
+            unlink('./Uploads/' . $value['b_img']);
+            unlink('./Uploads/' . $value['s_img']);
+        }
+        R('Public/del', array('Article'));
+    }
+
+    public function checkshare(){
+        $Article = M('Article');
+        if(!empty($_POST['id'])){
+            if(!$Article -> create()){
+                $this -> error($Article -> getError());
+            }
+            if($Article -> save()){
+                $this -> success(L('DATA_UPDATE_SUCCESS'));
+            }else{
+                $this -> error(L('DATA_UPDATE_ERROR'));
+            }
+        }
+        $info = $Article -> field('title,content,b_img,status') -> find($this -> _get('id', 'intval'));
+        $this -> assign('info', $info);
+        $this -> display();
     }
 
 

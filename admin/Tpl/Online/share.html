@@ -1,0 +1,75 @@
+<form id="pagerForm" action="__ACTION__" method="post">
+  <input type="hidden" name="pageNum" value="<-{$currentPage}->"/>
+  <input type="hidden" name="name" value="<-{$Think.request.name}->"/>
+</form>
+
+<div class="pageHeader">
+    <form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__ACTION__" method="post">
+        <div class="searchBar">
+            <ul class="searchContent">
+                <li style="width:330px;">
+                    <label>姓名：</label>
+                    <input type="text" name="name" />
+                </li>
+            </ul>
+            <div class="subBar">
+                <ul>
+                    <li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="pageContent">
+	<div class="panelBar">
+	  <ul class="toolBar">
+	    <li class=""><a class="delete" href="__APP__/Online/delshare/navTabId/online_share" posttype="string" rel="ids" target="selectedTodo" title="确实要删除这些记录吗?" warn="请选择记录"><span>删除</span></a></li>
+      </ul>
+	</div>
+
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+		  <tr>
+		     <th width="5"><div title="" class="gridCol"><input type="checkbox" class="checkboxCtrl" group="ids"></div></th>
+			<th width="5">编号</th>
+              <th width="20">姓名</th>
+			<th width="20">类别</th>
+			<th width="50">标题</th>
+			<th width="20">提交日期</th>
+            <th width="30">状态</th>
+            <th width="30">操作</th>
+		</tr>
+		</thead>
+		<tbody>
+		<volist name="result" id="r">
+		<tr target="sid_role" rel="<-{$r.id}->">
+		  <td><input type="checkbox" value="<-{$r.id}->" name="ids"></td>
+            <td><-{$r.id}-></td>
+            <td><-{$r.uname}-></td>
+			  <td><-{$r.type}-></td>
+			  <td><-{$r.title}-></td>
+			  <td><-{$r.addtime|date="Y-m-d H:i:s", ###}-></td>
+            <eq name="r.status" value="1">
+                <td style="color:red;">未通过审核</td>
+                <else/>
+                <td style="color:green;">已通过审核</td>
+            </eq>
+            <td><a href="__URL__/checkshare/id/<-{$r.id}->" target="dialog" style="color: blue;" height="500">查看/审核</a></td>
+        </tr>
+		</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+	  
+	  
+		<div class="pages">
+		  <span>共<-{$count}->条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="<-{$count}->" numPerPage="<-{$listRows}->" pageNumShown="10" currentPage="<-{$currentPage}->"></div>
+	</div>
+
+</div>
+
+
