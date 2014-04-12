@@ -322,4 +322,21 @@ class IndexAction extends Action {
         $result['content'] = nl2br($result['content']);
         echo json_encode($result);
     }
+
+    public function tosharezan(){
+        $aid = $this -> _post('aid');
+        if(in_array($aid, $_SESSION['zanlist'])){
+            echo 1;
+            return;
+        }
+        $Article = M('Article');
+        if($Article -> where(array('id' => $aid)) -> setInc('zan')){
+            $_SESSION['zanlist'][] = $aid;
+            echo 2;
+            return;
+        }else{
+            echo 3;
+            return;
+        }
+    }
 }
