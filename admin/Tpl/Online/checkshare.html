@@ -4,12 +4,12 @@
 	<div class="pageContent">
         <form method="post" action="__URL__/checkshare/callbackType/closeCurrent/navTabId/online_share" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)">
 
-            <div class="pageFormContent" layoutH="58">
+            <div class="pageFormContent">
                 <h1><-{$info.title}-></h1>
                 <br/>
                 <img src="__UPLOAD__/<-{$info.b_img}->" width="400" />
                 <br/>
-                <p><-{$info.content|nl2br}-></p>
+                <p s><-{$info.content|nl2br}-></p>
                 <hr style="clear: both;" />
                 <div class="unit">
                     <label>审核状态：</label>
