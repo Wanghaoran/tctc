@@ -131,7 +131,7 @@ ul.travel_list li:hover{ border:#d8813b 1px solid; width:246px; height:246px;}
 ul.travel_list li:hover a img{ margin:0;}
 ul.travel_list li:hover a.btn_zan{ display:block;}
 ul.travel_list li.five{ margin-right:0;}
-ul.travel_list li div{ width:248px; height:30px; line-height:30px; text-align:left; font-size:14px; color:#fff;}
+ul.travel_list li div{ width:248px; height:30px; line-height:30px; text-align:left; font-size:14px; color:#fff; white-space:nowrap;  overflow:hidden;}
 
 ul.tabnav{ width:258px; float:left; padding-left:320px;}
 ul.tabnav li{ float:left; width:116px; height:40px; margin-right:13px;}

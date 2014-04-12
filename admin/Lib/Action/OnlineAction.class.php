@@ -117,7 +117,7 @@ class OnlineAction extends CommonAction {
         if(!empty($_POST['name'])){
             $where['u.name'] = array('LIKE', '%' . $_POST['name'] . '%');
         }
-        R('Public/select', array('Article', 'a.id,a.title,a.type,a.content,a.addtime,a.status,u.name as uname', $where, 'addtime DESC', 'tctc_user as u ON a.uid = u.id', 'a'));
+        R('Public/select', array('Article', 'a.id,a.title,a.type,a.content,a.addtime,a.status,a.zan,u.name as uname', $where, 'addtime DESC', 'tctc_user as u ON a.uid = u.id', 'a'));
         $this -> display();
     }
 

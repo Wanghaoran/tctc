@@ -275,11 +275,51 @@ class IndexAction extends Action {
         if($Article -> add($add_data)){
             $this -> show('<script>alert("您的故事已经提交成功，审核后可见，感谢您的参与！");window.location="http://1000kmpacificrav4.tctc.com.cn";</script>');
         }else{
-            //添加失败伤处上传文件
+            //添加失败删除上传文件
             unlink('./Uploads/' . $b_img);
             unlink('./Uploads/' . $s_img);
             $this -> show('<script>alert("数据添加失败，请稍后重试！");window.location="http://1000kmpacificrav4.tctc.com.cn/#sharebox";</script>');
         }
 
+    }
+
+
+    public function getsharelist(){
+        $Article = M('Article');
+        $where = array();
+        $where['type'] = $this -> _post('type');
+        $where['status'] = 2;
+        if($_POST['order'] == 'time'){
+            $order = 'addtime DESC';
+        }else{
+            $order = 'zan DESC';
+        }
+
+        $page = $_POST['page'] ? $_POST['page'] : 1;
+        $start = ($page-1) * 10;
+
+        $count = $Article -> where($where) -> count();
+
+        $result = array();
+        $result['data'] = $Article -> field('id,title,s_img,type,addtime') -> where($where) -> order($order) -> limit($start,10) -> select();
+
+        $result['order'] = $_POST['order'];
+        $result['type'] = $_POST['type'];
+        $result['page'] = $page;
+        $result['counts'] = $count;
+
+        foreach($result['data'] as $key => $value){
+            $result['data'][$key]['addtime'] = date('Y-m-d', $value['addtime']);
+        }
+
+        echo json_encode($result);
+    }
+
+    public function getshareinfo(){
+        $Article = M('Article');
+        $result = $Article -> alias('a') -> field('u.name as uname,a.title,a.type,a.content,a.b_img,a.addtime') -> join('tctc_user as u ON a.uid = u.id') -> where(array('a.id' => $this -> _post('aid'))) -> find();
+        $result['addtime'] = date('Y-m-d', $result['addtime']);
+        $result['content'] = nl2br($result['content']);
+        echo json_encode($result);
     }
 }

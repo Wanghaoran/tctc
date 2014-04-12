@@ -279,9 +279,65 @@
 
     <script>
         //列表页展示
-        function showhide(){
-            $('#share_home').hide();
-            $('#share_list').show();
+        function showhide(type, order, page){
+            if(!page){
+                page = 1;
+            }
+            $.ajax({
+                type : 'POST',
+                url : '__URL__/getsharelist',
+                cache : false,
+                data : '&type=' + type + '&order=' + order + '&page=' + page,
+                dataType : 'json',
+                success : function(ress){
+                    //列表数据
+                    var list_str = '';
+                    $.each(ress.data, function(key, val) {
+                        if(key % 5 == 4){
+                            list_str += "<li class='five'><a class='btn_zan'>赞</a><a onclick='showcontent("+ val.id + ");'><img src='./Uploads/" + val.s_img + "' /></a><div>[" + val.type + "/" + val.addtime + "]" + val.title + "</div></li>";
+                        }else{
+                            list_str += "<li><a class='btn_zan'>赞</a><a onclick='showcontent("+ val.id + ");'><img src='./Uploads/" + val.s_img + "' /></a><div>[" + val.type + "/" + val.addtime + "]" + val.title + "</div></li>";
+
+                        }
+
+                    });
+
+                    $('#travel_list').html(list_str);
+
+                    //排序
+                    if(ress.order == 'time'){
+                        var list_order_str = "<li class='choice'><a class='new_upload'>最新上传</a></li><li><a class='hign_prase' onclick='showhide(\"" + ress.type +  "\", \"zan\");'>最高点赞</a></li>";
+                    }else{
+                        var list_order_str = "<li><a class='new_upload' onclick='showhide(\"" + ress.type +  "\", \"time\");'>最新上传</a></li><li class='choice'><a class='hign_prase'>最高点赞</a></li>";
+                    }
+
+                    $('#list_tabnav').html(list_order_str);
+
+                    //分页
+                    var list_page = '';
+                    var page = ress.page;
+                    var counts = ress.counts;
+                    var maxpage = Math.ceil(counts/10);
+
+                    if(page == 1){
+                        list_page += '<li class="lidisable"><a class="btn_pre">上一页</a></li>';
+                    }else{
+                        list_page += '<li><a class="btn_pre" onclick=\'showhide(\"' + ress.type + '\", \"' + ress.order + '\", \"' + (parseInt(page)-1) + '\");\'>上一页</a></li>';
+                    }
+
+                    if(page == maxpage){
+                        list_page += '<li class="lidisable"><a class="btn_next">下一页</a></li>';
+                    }else{
+                        list_page += '<li><a class="btn_next" onclick=\'showhide(\"' + ress.type + '\", \"' + ress.order + '\", \"' + (parseInt(page)+1) + '\");\'>下一页</a></li>';
+                    }
+
+                    $('#list_fenye').html(list_page);
+
+                    $('#share_home').hide();
+                    $('#share_list').show();
+                }
+            });
+
         }
         //列表页返回
         function listback(){
@@ -290,7 +346,21 @@
         }
 
         //详情页展示
-        function showcontent(){
+        function showcontent(aid){
+
+            $.ajax({
+                type : 'POST',
+                url : '__URL__/getshareinfo',
+                cache : false,
+                data : '&aid=' + aid,
+                dataType : 'json',
+                success : function(ress){
+                    $('#travel_title').html("<span>作者：" + ress.uname + "&nbsp;&nbsp;" + ress.addtime + "</span>" + ress.title + "");
+                    $('#travel_img').html("<img src='./Uploads/" + ress.b_img + "' />");
+                    $('#travel_info').html(ress.content);
+                }
+            });
+
             $('#share_list').hide();
             $('#share_content').show();
         }
@@ -530,33 +600,33 @@
             <li>
                 <div class="listbox">
 
-                    <a onclick="showhide();" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share1.jpg" /></a>
+                    <a onclick="showhide('游记', 'time');" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share1.jpg" /></a>
                     <div class="listbox_title"><h2><img src="__PUBLIC__/index/images/text1.png" /></h2>9天的美国之旅结束了，印象最深的一天当属在1号公路自驾的哪一天。也许因为它的名字叫1号公路，所以我的...</div>
                 </div>
             </li>
             <li>
                 <div class="listbox">
-                    <a onclick="showhide();" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share2.jpg" /></a>
+                    <a onclick="showhide('照片', 'time');" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share2.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text2.png" /></h2></div>
                 </div>
                 <div class="listbox">
-                    <a onclick="showhide();" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share3.jpg" /></a>
+                    <a onclick="showhide('感悟', 'time');" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share3.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text3.png" /></h2></div>
                 </div>
             </li>
             <li>
                 <div class="listbox">
-                    <a onclick="showhide();" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share4.jpg" /></a>
+                    <a onclick="showhide('梦想', 'time');" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share4.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text4.png" /></h2></div>
                 </div>
                 <div class="listbox">
-                    <a onclick="showhide();" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share5.jpg" /></a>
+                    <a onclick="showhide('攻略', 'time');" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share5.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text5.png" /></h2></div>
                 </div>
             </li>
             <li>
                 <div class="listbox">
-                    <a onclick="showhide();" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share6.jpg" /></a>
+                    <a onclick="showhide('纪念品', 'time');" href="javascript:void(0);"><img src="__PUBLIC__/index/images/share6.jpg" /></a>
                     <div class="listbox_title height2"><h2><img src="__PUBLIC__/index/images/text6.png" /></h2></div>
                 </div>
             </li>
@@ -580,90 +650,18 @@
             <a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);" href="__URL__/weibologin" target="_blank" class="login_sina"></a>
             <li><a onclick="listback();" class="btn_fanhui">返回</a></li>
         </notempty>
-        <ul class="tabnav">
-            <li><a class="new_upload">最新上传</a></li>
-            <li class="choice"><a class="hign_prase">最高点赞</a></li>
+        <ul class="tabnav" id="list_tabnav">
+            <!-- ajax -->
         </ul>
     </div>
     <div class="clear20"></div>
-    <ul class="travel_list">
-        <li>
-            <a href="#" class="btn_zan">赞</a>
-            <a href="javascript:;" onclick="showcontent();">
-                <img src="__PUBLIC__/index/images/img_share1.png" />
-            </a>
-            <div>[游记/2014-04-02]一次特殊的旅行</div>
-        </li>
-        <li>
-            <a href="#" class="btn_zan">赞</a>
-            <a href="javascript:;" onclick="showcontent();">
-                <img src="__PUBLIC__/index/images/img_share2.png" />
-            </a>
-            <div>[游记/2014-04-02]一次特殊的旅行</div>
-        </li>
-        <li>
-            <a href="#" class="btn_zan">赞</a>
-            <a href="javascript:;" onclick="showcontent();">
-                <img src="__PUBLIC__/index/images/img_share3.png" />
-            </a>
-            <div>[游记/2014-04-02]一次特殊的旅行</div>
-        </li>
-        <li>
-            <a href="#" class="btn_zan">赞</a>
-            <a href="javascript:;" onclick="showcontent();">
-                <img src="__PUBLIC__/index/images/img_share4.png" />
-            </a>
-            <div>[游记/2014-04-02]一次特殊的旅行</div>
-        </li>
-        <li class="five">
-            <a href="#" class="btn_zan">赞</a>
-            <a href="javascript:;" onclick="showcontent();">
-                <img src="__PUBLIC__/index/images/img_share5.png" />
-            </a>
-            <div>[游记/2014-04-02]一次特殊的旅行</div>
-        </li>
-        <div class="clear30"></div>
-        <li>
-            <a href="#" class="btn_zan">赞</a>
-            <a href="javascript:;" onclick="showcontent();">
-                <img src="__PUBLIC__/index/images/img_share6.png" />
-            </a>
-            <div>[游记/2014-04-02]一次特殊的旅行</div>
-        </li>
-        <li>
-            <a href="#" class="btn_zan">赞</a>
-            <a href="javascript:;" onclick="showcontent();">
-                <img src="__PUBLIC__/index/images/img_share7.png" />
-            </a>
-            <div>[游记/2014-04-02]一次特殊的旅行</div>
-        </li>
-        <li>
-            <a href="#" class="btn_zan">赞</a>
-            <a href="javascript:;" onclick="showcontent();">
-                <img src="__PUBLIC__/index/images/img_share8.png" />
-            </a>
-            <div>[游记/2014-04-02]一次特殊的旅行</div>
-        </li>
-        <li>
-            <a href="#" class="btn_zan">赞</a>
-            <a href="javascript:;" onclick="showcontent();">
-                <img src="__PUBLIC__/index/images/img_share9.png" />
-            </a>
-            <div>[游记/2014-04-02]一次特殊的旅行</div>
-        </li>
-        <li class="five">
-            <a href="#" class="btn_zan">赞</a>
-            <a href="javascript:;" onclick="showcontent();">
-                <img src="__PUBLIC__/index/images/img_share10.png" />
-            </a>
-            <div>[游记/2014-04-02]一次特殊的旅行</div>
-        </li>
+    <ul class="travel_list" id="travel_list">
+        <!-- ajax get json data -->
         <div class="clear30"></div>
     </ul>
     <div class="clear"></div>
-    <ul class="fenye">
-        <li class="lidisable"><a class="btn_pre">上一页</a></li>
-        <li><a class="btn_next">下一页</a></li>
+    <ul class="fenye" id="list_fenye">
+        <!-- ajax -->
     </ul>
     <div class="clear20"></div>
 </div>
@@ -687,14 +685,11 @@
     </div>
     <div class="clear20"></div>
     <div class="travel_content">
-        <div class="travel_title"><span>作者：TOYOTA&nbsp;&nbsp;2014-04-02</span>一次特殊的旅行</div>
+        <div class="travel_title" id="travel_title"></div>
         <div class="clear20"></div>
-        <div class="travel_img"><img src="__PUBLIC__/index/images/img_gushi.jpg" /></div>
+        <div class="travel_img" id="travel_img"></div>
         <div class="clear20"></div>
-        <div class="travel_info">
-                        开了一个小时我们就进入圣塔芭芭拉区域，最后来到圣塔芭芭拉传教堂。我们到达的时候是早上十一点过一点，人还很少。其实后来发现，传教堂供游客停车的停车场是早上十一点才开门的，所以我们到达的时间应该是刚刚好。我们来传教堂主要是为了欣赏建筑，并不是来搞什么宗教活动，所以没有买票进到里面参观。另一个原因没有进到里面，就是我并不打算在这里停留很久，只是打算稍微看看，照几张相而已。圣塔芭芭拉传教堂是圣塔芭芭拉市最著名的建筑之一，之前我们来这里旅游忘记到这里来看看了，这次算是补全了。
-                        开了一个小时我们就进入圣塔芭芭拉区域，最后来到圣塔芭芭拉传教堂。我们到达的时候是早上十一点过一点，人还很少。其实后来发现，传教堂供游客停车的停车场是早上十一点才开门的，所以我们到达的时间应该是刚刚好。我们来传教堂主要是为了欣赏建筑，并不是来搞什么宗教活动，所以没有买票进到里面参观。另一个原因没有进到里面，就是我并不打算在这里停留很久，只是打算稍微看看，照几张相而已。圣塔芭芭拉传教堂是圣塔芭芭拉市最著名的建筑之一，之前我们来这里旅游忘记到这里来看看了，这次算是补全了。
-                        开了一个小时我们就进入圣塔芭芭拉区域，最后来到圣塔芭芭拉传教堂。我们到达的时候是早上十一点过一点，人还很少。其实后来发现，传教堂供游客停车的停车场是早上十一点才开门的，所以我们到达的时间应该是刚刚好。我们来传教堂主要是为了欣赏建筑，并不是来搞什么宗教活动，所以没有买票进到里面参观。另一个原因没有进到里面，就是我并不打算在这里停留很久，只是打算稍微看看，照几张相而已。圣塔芭芭拉传教堂是圣塔芭芭拉市最著名的建筑之一，之前我们来这里旅游忘记到这里来看看了，这次算是补全了。
+        <div class="travel_info" id="travel_info">
         </div>
         <div class="clear20"></div>
     </div>

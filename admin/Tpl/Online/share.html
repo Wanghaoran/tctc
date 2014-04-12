@@ -38,6 +38,7 @@
 			<th width="20">类别</th>
 			<th width="50">标题</th>
 			<th width="20">提交日期</th>
+			<th width="20">点赞量</th>
             <th width="30">状态</th>
             <th width="30">操作</th>
 		</tr>
@@ -51,6 +52,7 @@
 			  <td><-{$r.type}-></td>
 			  <td><-{$r.title}-></td>
 			  <td><-{$r.addtime|date="Y-m-d H:i:s", ###}-></td>
+            <td><-{$r.zan}-></td>
             <eq name="r.status" value="1">
                 <td style="color:red;">未通过审核</td>
                 <else/>
