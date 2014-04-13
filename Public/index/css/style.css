@@ -184,7 +184,7 @@ ul.fenye li a.btn_next{ background:url(../images/text_next.png) center no-repeat
 	.travel_title{width:784px; height:30px; padding:35px 0; margin:0 auto; font-size:24px; font-weight:800; text-align:left;}
 	.travel_title span{ font-size:14px; font-weight:400; color:#666; float:right; margin-top:10px; height:20px; line-height:20px;}
 	.travel_img{ width:784px; margin:0 auto;}
-	.travel_info{width:750px; margin:0px auto; padding:0 0 40px 0;font-size:14px; font-weight:400; color:#666; line-height:200%; text-indent:25px;}
+	.travel_info{width:750px; margin:0px auto; padding:0 0 40px 0;font-size:14px; font-weight:400; color:#666; line-height:200%;}
 	
 	a.btn_quxiao{ float:right; margin:10px 0 0 10px; width:116px; height:40px; display:inline-block; border:none; background:url(../images/btn_quxiao.png) bottom center no-repeat; cursor:pointer; text-indent:-9999em;}
 	a.btn_quxiao:hover{ background:url(../images/btn_quxiao.png) top center no-repeat;}
