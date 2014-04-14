@@ -69,9 +69,9 @@ html, body {height: 100%;}
 		.hidebg3 h3{ font-size:48px; font-weight:800; color:#f77105; height:100px; line-height:100px; text-align:center;}
 		.sharecon{ width:1338px; margin:0 auto;}
 		.sharetitle{ width:1325px; height:41px; padding-top:24px; background:url(../images/sharetitle.png) left center no-repeat;}
-		.sharetitle a.btn_fanhui{float:right; display:inline-block; width:90px; height:40px; padding-right:15px; background:#fff url(../images/btn_fanhui.png) center no-repeat; text-indent:-9999em;}
-		a.login_sina{ float:right; display:inline-block; width:165px; height:41px; background:url(../images/btn_login.png) left center no-repeat; margin-left:18px;}
-		a.login_qq{ float:right;display:inline-block; width:165px; height:41px; background:url(../images/btn_login.png) right center no-repeat; margin-left:18px;}
+		.sharetitle a.btn_fanhui{float:right; display:inline-block; width:90px; height:32px; padding-right:15px; background:#fff url(../images/btn_fanhui.png) center no-repeat; text-indent:-9999em;}
+		a.login_sina{ float:right; display:inline-block; width:173px; height:32px; background:url(../images/btn_login.png) left center no-repeat; margin-left:18px;}
+		a.login_qq{ float:right;display:inline-block; width:170px; height:32px; background:url(../images/btn_login.png) right center no-repeat; margin-left:18px;}
 		
 		ul.sharelist{ width:1338px; margin:0 auto;}
 		ul.sharelist li{ float:left; width:332px; height:608px;}
@@ -94,9 +94,9 @@ html, body {height: 100%;}
 .divimg2 h2{ text-align: center; height:40px; line-height:40px; font-size:16px; font-weight:800;}
 .divimg2 p{ line-height:20px; text-align:left;}
 
-.divbtn{ width:420px; height:40px; margin:20px auto;}
-a.login_sina2{ display:inline-block; width:200px; height:40px; background:url(../images/btn_login2.png) left center no-repeat; margin-right:20px;}
-a.login_qq2{ display:inline-block; width:200px; height:40px; background:url(../images/btn_login2.png) right center no-repeat;}
+.divbtn{ width:500px; height:40px; margin:20px auto;}
+a.login_sina2{ display:inline-block; width:239px; height:48px; background:url(../images/btn_login2.png) left center no-repeat; margin-right:20px;}
+a.login_qq2{ display:inline-block; width:230px; height:48px; background:url(../images/btn_login2.png) right center no-repeat;}
 
 /*美化select*/
 ul.ultable li select{display: block;}
@@ -145,8 +145,8 @@ ul.tabnav li.choice a.hign_prase{ background:url(../images/tabnavbg.png) right t
 ul.shareright{ float:right;}
 ul.shareright li{ float:right; height:40px; background:#fff; margin-right:10px;}
 ul.shareright li a.btn_fanhui{ display:inline-block; width:90px; margin-right:10px; height:40px; background:url(../images/btn_fanhui.png) center no-repeat; text-indent:-9999em;}
-ul.shareright li a.btn_user{ display:inline-block; height:40px; line-height:40px; background:url(../images/btn_user.png) left center no-repeat; margin-left:15px; padding:0 15px 0 40px; font-size:22px; color:#de4832; text-align:left; text-decoration:none;}
-ul.shareright li a.btn_share{ display:inline-block; width:200px; height:40px; background:url(../images/btn_right3.png) center no-repeat; text-indent:-9999em;}
+ul.shareright li a.btn_user{ display:inline-block; height:32px; line-height:32px; background:url(../images/btn_user.png) left center no-repeat; margin-left:15px; padding:6px 15px 0 40px; font-size:18px; color:#de4832; text-align:left; text-decoration:none;}
+ul.shareright li a.btn_share{ display:inline-block; width:200px; height:32px; background:url(../images/btn_right3.png) center no-repeat; text-indent:-9999em; padding:6px 0 0 0;}
 
 ul.fenye{ float:right;}
 ul.fenye li{ float:left; width:86px; height:30px;background:url(../images/fenyebgon.png) no-repeat; margin-right:20px;}
