@@ -19,6 +19,30 @@ class PublicAction extends Action {
         }
     }
 
+    public function statistics(){
+        $User = M('User');
+        $apply_num = $User -> query("SELECT count(*) as num,from_unixtime(`applyTime`, '%Y-%m-%d') as time FROM tctc_user GROUP BY from_unixtime(`applyTime`, '%Y-%m-%d')");
+
+        $apply_str = '';
+        foreach($apply_num as $value){
+            $apply_str .= '<tr align="center"><td>' . $value["time"] . '</td><td>' . $value["num"] . '</td></tr>';
+        }
+
+        $this -> show('<h1>数据统计</h1>');
+        $this -> show('<h3>每日申请人数</h3>');
+        $this -> show('<table border="1"><tr><th>日期</th><th>申请人数</th></tr>' . $apply_str . '</table>');
+
+        $office_num = $User -> query("SELECT count(*) as num,from_unixtime(`applyTime`, '%Y-%m-%d') as time FROM tctc_user WHERE offline=2 GROUP BY from_unixtime(`applyTime`, '%Y-%m-%d')");
+        $office_str = '';
+        foreach($office_num as $value){
+            $office_str .= '<tr align="center"><td>' . $value["time"] . '</td><td>' . $value["num"] . '</td></tr>';
+        }
+
+        $this -> show('<h3>每日线下验证人数</h3>');
+        $this -> show('<table border="1"><tr><th>日期</th><th>申请人数</th></tr>' . $office_str . '</table>');
+
+    }
+
 
 
 }
