@@ -27,7 +27,7 @@ class IndexAction extends Action {
             //$this -> assign('uid', $this -> _get('uid'));
 
             //腾讯用户直接登录，不弹层
-            session('tctc_uid', 1);
+            session('tctc_uid', 979);
             session('tctc_name', $user_message['name']);
             redirect(_PHP_FILE_ . '/Index/index#sharebox');
 
