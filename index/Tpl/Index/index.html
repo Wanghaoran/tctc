@@ -191,6 +191,10 @@
             $("#hidebg2,#popDiv2").hide();
         }
 
+        function closeBg3(){
+            $("#hidebg,#popDiv").hide();
+        }
+
     </script>
 
     <script>
@@ -421,6 +425,7 @@
             <a onclick="_smq.push(['custom','成功注册页面','微博账号登录']);" href="__URL__/weibologin" target="_blank" class="login_sina2"></a>
             <a onclick="_smq.push(['custom','成功注册页面','QQ账号登录']);" href="__URL__/tencentlogin" target="_blank" class="login_qq2"></a></div>
         <h3><img src="__PUBLIC__/index/images/poptext2.png" /></h3>
+        <a href="javascript:closeBg3()" class="icon_close"></a>
     </div>
 </div>
 <div id="hidebg" class="hidebg" style="display:none"></div>
@@ -725,6 +730,8 @@
         popDiv3();
     </script>
 </notempty>
+
+
 
 
 
