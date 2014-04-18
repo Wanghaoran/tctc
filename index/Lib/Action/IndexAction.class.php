@@ -254,10 +254,10 @@ class IndexAction extends Action {
         $upload -> dateFormat = 'Y-m-d';
         //thumb
         $upload -> thumb = true;
-        $upload -> thumbMaxWidth = '246,784';
-        $upload -> thumbMaxHeight = '246,503';
-        $upload -> thumbPrefix = 's_,b_';
-        $upload -> thumbRemoveOrigin = true;
+        $upload -> thumbMaxWidth = '246';
+        $upload -> thumbMaxHeight = '246';
+        $upload -> thumbPrefix = 's_';
+//        $upload -> thumbRemoveOrigin = true;
         if(!$upload->upload()) {// 上传错误提示错误信息
             $error_info = $upload->getErrorMsg();
             $this -> show('<script>alert("' . $error_info . '");window.location="http://1000kmpacificrav4.tctc.com.cn/#sharebox";</script>');
@@ -265,7 +265,7 @@ class IndexAction extends Action {
             $info =  $upload->getUploadFileInfo();
         }
         //大图地址
-        $b_img = str_replace('/', '/b_', $info[0]['savename']);
+        $b_img = str_replace('/', '/', $info[0]['savename']);
         //小图地址
         $s_img = str_replace('/', '/s_', $info[0]['savename']);
 
