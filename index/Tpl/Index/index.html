@@ -365,7 +365,7 @@
                 data : '&aid=' + aid,
                 dataType : 'json',
                 success : function(ress){
-                    $('#travel_title').html("<span>作者：" + ress.uname + "&nbsp;&nbsp;" + ress.addtime + "</span>" + ress.title + "");
+                    $('#travel_title').html("<span>作者：" + ress.uname + "&nbsp;&nbsp;" + ress.addtime + "</span>" + ress.title + "<a target='_blank' href='http://service.weibo.com/share/share.php?url=http%3A%2F%2F1000kmpacificrav4.tctc.com.cn&searchPic=false&pic=http%3A%2F%2F1000kmpacificrav4.tctc.com.cn%2FUploads%2F" + ress.b_img + "&appkey=1078875116&title=%E6%88%91%E5%88%86%E4%BA%AB%E4%BA%86%231000%E5%85%AC%E9%87%8C%E7%9A%84%E5%A4%AA%E5%B9%B3%E6%B4%8B%23RAV4-20%E5%91%A8%E5%B9%B4%E7%BA%AA%E5%BF%B5%E6%B4%BB%E5%8A%A8%E6%96%87%E7%AB%A0%EF%BC%9A%E3%80%8A" + ress.title +"%E3%80%8B' style='margin-left: 20px;'><img height='25' src='./Public/index/images/shareweibo.png' /></a>");
                     $('#travel_img').html("<img src='./Uploads/" + ress.b_img + "' />");
                     $('#travel_info').html(ress.content);
                 }
@@ -605,7 +605,7 @@
                 </ul>
                 <a class="submit"></a>
                 <span style="margin-left: 20px;">
-                    <wb:share-button appkey="1JBeP2" addition="number" type="button" default_text="%E6%88%91%E5%B7%B2%E6%88%90%E5%8A%9F%E6%8A%A5%E5%90%8D%231000%E5%85%AC%E9%87%8C%E7%9A%84%E5%A4%AA%E5%B9%B3%E6%B4%8B%23RAV4-20%E5%91%A8%E5%B9%B4%E7%BA%AA%E5%BF%B5%E6%B4%BB%E5%8A%A8%EF%BC%8C%E6%8A%A5%E5%90%8D%E5%8D%B3%E6%9C%89%E6%9C%BA%E4%BC%9A%E8%8E%B7%E5%BE%971%E5%8F%B7%E5%85%AC%E8%B7%AF%E8%87%AA%E9%A9%BE%E6%B8%B8%E6%8A%BD%E5%8F%96%E8%B5%84%E6%A0%BC%EF%BC%8C%E5%B0%8F%E4%BC%99%E4%BC%B4%E4%BB%AC%E5%BF%AB%E6%9D%A5%E6%8A%A5%E5%90%8D%E5%90%A7%EF%BC%81" picture_search="false"></wb:share-button>
+                    <wb:share-button appkey="1078875116" addition="number" type="button" default_text="%E6%88%91%E5%B7%B2%E6%88%90%E5%8A%9F%E6%8A%A5%E5%90%8D%231000%E5%85%AC%E9%87%8C%E7%9A%84%E5%A4%AA%E5%B9%B3%E6%B4%8B%23RAV4-20%E5%91%A8%E5%B9%B4%E7%BA%AA%E5%BF%B5%E6%B4%BB%E5%8A%A8%EF%BC%8C%E6%8A%A5%E5%90%8D%E5%8D%B3%E6%9C%89%E6%9C%BA%E4%BC%9A%E8%8E%B7%E5%BE%971%E5%8F%B7%E5%85%AC%E8%B7%AF%E8%87%AA%E9%A9%BE%E6%B8%B8%E6%8A%BD%E5%8F%96%E8%B5%84%E6%A0%BC%EF%BC%8C%E5%B0%8F%E4%BC%99%E4%BC%B4%E4%BB%AC%E5%BF%AB%E6%9D%A5%E6%8A%A5%E5%90%8D%E5%90%A7%EF%BC%81" picture_search="false"></wb:share-button>
                 </span>
             </div>
         </div>
