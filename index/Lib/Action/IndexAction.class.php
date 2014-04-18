@@ -22,16 +22,14 @@ class IndexAction extends Action {
             $user_message = json_decode($info, true);
             $user_message['name'] = $user_message['nickname'];
 
-            //$this -> assign('user_message', $user_message);
-            //$this -> assign('type', $this -> _get('type'));
-            //$this -> assign('uid', $this -> _get('uid'));
+            $this -> assign('user_message', $user_message);
+            $this -> assign('type', $this -> _get('type'));
+            $this -> assign('uid', $this -> _get('uid'));
 
             //腾讯用户直接登录，不弹层
-            session('tctc_uid', 979);
-            session('tctc_name', $user_message['name']);
-            redirect(_PHP_FILE_ . '/Index/index#sharebox');
-
-
+            //session('tctc_uid', 979);
+            //session('tctc_name', $user_message['name']);
+            //redirect(_PHP_FILE_ . '/Index/index#sharebox');
 
 
         }
