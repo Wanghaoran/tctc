@@ -421,6 +421,17 @@
     </script>
 
 
+    <!--map JS-->
+    <script type="text/javascript" src="__PUBLIC__/index/javascript/featureList.js"></script>
+    <script language="javascript">
+        $(document).ready(function(){
+            $('#tabs li a').featureList({
+                output			:	'#output li',
+                start_item		:	1
+            });
+        });
+    </script>
+
 
 </head>
 <body>
@@ -730,6 +741,69 @@
     </div>
 
 </div>
+
+
+<div id="feature_list">
+    <ul id="tabs">
+        <li>
+            <a href="javascript:;" class="map1" title="旧金山">旧金山</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="map2" title="国家公园">国家公园</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="map3" title="蒙特雷17mile">蒙特雷17mile</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="map4" title="卡梅尔小镇">卡梅尔小镇</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="map5" title="大苏尔">大苏尔</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="map6" title="赫氏古镇">赫氏古镇</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="map7" title="圣芭芭拉小镇">圣芭芭拉小镇</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="map8" title="环球影城OR迪士尼">环球影城OR迪士尼</a>
+        </li>
+        <li>
+            <a href="javascript:;" class="map9" title="洛杉矶">洛杉矶</a>
+        </li>
+    </ul>
+    <ul id="output">
+        <li>
+            <img src="__PUBLIC__/index/images/map1.jpg" width="1325" height="510"/>
+        </li>
+        <li>
+            <img src="__PUBLIC__/index/images/map2.jpg" width="1325" height="510"/>
+        </li>
+        <li>
+            <img src="__PUBLIC__/index/images/map3.jpg" width="1325" height="510"/>
+        </li>
+        <li>
+            <img src="__PUBLIC__/index/images/map4.jpg" width="1325" height="510"/>
+        </li>
+        <li>
+            <img src="__PUBLIC__/index/images/map5.jpg" width="1325" height="510"/>
+        </li>
+        <li>
+            <img src="__PUBLIC__/index/images/map6.jpg" width="1325" height="510"/>
+        </li>
+        <li>
+            <img src="__PUBLIC__/index/images/map7.jpg" width="1325" height="510"/>
+        </li>
+        <li>
+            <img src="__PUBLIC__/index/images/map8.jpg" width="1325" height="510"/>
+        </li>
+        <li>
+            <img src="__PUBLIC__/index/images/map9.jpg" width="1325" height="510"/>
+        </li>
+    </ul>
+</div>
+<div class="clear20"></div>
 
 
 

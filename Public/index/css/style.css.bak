@@ -189,26 +189,5 @@ ul.fenye li a.btn_next{ background:url(../images/text_next.png) center no-repeat
 	a.btn_quxiao{ float:right; margin:10px 0 0 10px; width:116px; height:40px; display:inline-block; border:none; background:url(../images/btn_quxiao.png) bottom center no-repeat; cursor:pointer; text-indent:-9999em;}
 	a.btn_quxiao:hover{ background:url(../images/btn_quxiao.png) top center no-repeat;}
 	
-#feature_list{width:1325px;height:510px;overflow:hidden;position:relative; margin:0 auto;}
-#feature_list ul{position:absolute;top:0;list-style:none;padding:0;margin:0;}
-ul#tabs{left:0;z-index:2;}
-ul#tabs li{}
-ul#tabs li a{text-decoration:none;display:block;height:20px;outline:none; position:absolute; text-indent:-9999em;}
-ul#tabs li a.map1{ width:60px; left:550px; top:17px;}
-ul#tabs li a.map2{ width:165px; left:550px; top:41px;}
-ul#tabs li a.map3{ width:125px; left:573px; top:124px;}
-ul#tabs li a.map4{ width:85px; left:588px; top:152px;}
-ul#tabs li a.map5{ width:50px; left:637px; top:215px;}
-ul#tabs li a.map6{ width:66px; left:659px; top:253px;}
-ul#tabs li a.map7{ width:100px; left:722px; top:277px;}
-ul#tabs li a.map8{ width:130px; left:850px; top:380px;}
-ul#tabs li a.map9{ width:60px; left:877px; top:407px;}
-
-ul#output{right:0;width:463px;height:240px;position:relative;}
-ul#output li{position:absolute;width:463px;height:240px;}
-ul#output li a{position:absolute;bottom:10px;right:10px;padding:8px 12px;text-decoration:none;font-size:12px;color:#FFF;background:#000;-moz-border-radius:5px;}
-ul#output li a:hover{background:#D33431;}
-</style>
-	
 
 
