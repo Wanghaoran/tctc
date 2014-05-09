@@ -35,8 +35,8 @@
 		var total_items		= tabs.length;
 		var visible_item	= options.start_item || 0;
 
-		options.pause_on_hover		= options.pause_on_hover		|| true;
-		options.transition_interval	= options.transition_interval	|| 5000;
+		//options.pause_on_hover		= options.pause_on_hover		|| true;
+//		options.transition_interval	= options.transition_interval	|| 5000;
 
 		output.hide().eq( visible_item ).show();
 		tabs.eq( visible_item ).addClass('current');
@@ -49,22 +49,22 @@
 			slide( tabs.index( this) );
 		});
 
-		if (options.transition_interval > 0) {
-			var timer = setInterval(function () {
-				slide();
-			}, options.transition_interval);
-
-			if (options.pause_on_hover) {
-				tabs.mouseenter(function() {
-					clearInterval( timer );
-
-				}).mouseleave(function() {
-					clearInterval( timer );
-					timer = setInterval(function () {
-						slide();
-					}, options.transition_interval);
-				});
-			}
-		}
+		//if (options.transition_interval > 0) {
+//			var timer = setInterval(function () {
+//				slide();
+//			}, options.transition_interval);
+//
+//			if (options.pause_on_hover) {
+//				tabs.mouseenter(function() {
+//					clearInterval( timer );
+//
+//				}).mouseleave(function() {
+//					clearInterval( timer );
+//					timer = setInterval(function () {
+//						slide();
+//					}, options.transition_interval);
+//				});
+//			}
+//		}
 	};
 })(jQuery);

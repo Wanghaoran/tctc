@@ -189,8 +189,8 @@ ul.fenye li a.btn_next{ background:url(../images/text_next.png) center no-repeat
 	a.btn_quxiao{ float:right; margin:10px 0 0 10px; width:116px; height:40px; display:inline-block; border:none; background:url(../images/btn_quxiao.png) bottom center no-repeat; cursor:pointer; text-indent:-9999em;}
 	a.btn_quxiao:hover{ background:url(../images/btn_quxiao.png) top center no-repeat;}
 	
-#feature_list{width:1325px;height:510px;overflow:hidden;position:relative; margin:0 auto;}
-#feature_list ul{position:absolute;top:0;list-style:none;padding:0;margin:0;}
+#feature_list{width:1325px;height:510px;overflow:hidden;position:relative; margin:0 auto;background:url(../images/mapbg.png) center no-repeat;}
+#feature_list ul{position:absolute;top:0;list-style:none;padding:0;margin:0; }
 ul#tabs{left:0;z-index:2;}
 ul#tabs li{}
 ul#tabs li a{text-decoration:none;display:block;height:20px;outline:none; position:absolute; text-indent:-9999em;}
