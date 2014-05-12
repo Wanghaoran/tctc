@@ -15,6 +15,25 @@
     <script type="text/javascript" src="__PUBLIC__/index/javascript/swfobject.js"></script>
 
 
+    <!--map JS-->
+    <script type="text/javascript" src="__PUBLIC__/index/javascript/featureList.js"></script>
+    <script language="javascript">
+        $(document).ready(function(){
+            //tabs切换
+            $('#feature_list').each(function(){
+                var _self = $(this);
+                var _btn = $('ul#tabs>li', _self);
+                var _div = $('#output>div',_self);
+                _btn.on('hover',function(){
+                    var _ind = _btn.index(this);
+                    $(this).addClass('now').siblings('li').removeClass('now');
+                    _div.eq(_ind).removeClass('none').siblings('div').addClass('none');
+                    return false;
+                })
+            });
+        });
+    </script>
+
     <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 
 
@@ -421,16 +440,8 @@
     </script>
 
 
-    <!--map JS-->
-    <script type="text/javascript" src="__PUBLIC__/index/javascript/featureList.js"></script>
-    <script language="javascript">
-        $(document).ready(function(){
-            $('#tabs li a').featureList({
-                output			:	'#output li',
-                start_item		:	1
-            });
-        });
-    </script>
+
+
 
 
 </head>
@@ -744,63 +755,63 @@
 
 
 <div id="feature_list">
-    <ul id="tabs">
-        <li>
-            <a class="map1" title="旧金山">旧金山</a>
+    <ul id="tabs" class="clearfix">
+        <li class="now">
+            <a href="javascript:;" class="map1" title="旧金山">旧金山</a>
         </li>
         <li>
-            <a class="map2" title="国家公园">国家公园</a>
+            <a href="javascript:;" class="map2" title="国家公园">国家公园</a>
         </li>
         <li>
-            <a class="map3" title="蒙特雷17mile">蒙特雷17mile</a>
+            <a href="javascript:;" class="map3" title="蒙特雷17mile">蒙特雷17mile</a>
         </li>
         <li>
-            <a class="map4" title="卡梅尔小镇">卡梅尔小镇</a>
+            <a href="javascript:;" class="map4" title="卡梅尔小镇">卡梅尔小镇</a>
         </li>
         <li>
-            <a class="map5" title="大苏尔">大苏尔</a>
+            <a href="javascript:;" class="map5" title="大苏尔">大苏尔</a>
         </li>
         <li>
-            <a class="map6" title="赫氏古镇">赫氏古镇</a>
+            <a href="javascript:;" class="map6" title="赫氏古镇">赫氏古镇</a>
         </li>
         <li>
-            <a class="map7" title="圣芭芭拉小镇">圣芭芭拉小镇</a>
+            <a href="javascript:;" class="map7" title="圣芭芭拉小镇">圣芭芭拉小镇</a>
         </li>
         <li>
-            <a class="map8" title="环球影城OR迪士尼">环球影城OR迪士尼</a>
+            <a href="javascript:;" class="map8" title="环球影城OR迪士尼">环球影城OR迪士尼</a>
         </li>
         <li>
-            <a class="map9" title="洛杉矶">洛杉矶</a>
+            <a href="javascript:;" class="map9" title="洛杉矶">洛杉矶</a>
         </li>
     </ul>
     <ul id="output">
-        <li>
+        <div class="clearfix">
             <img src="__PUBLIC__/index/images/map1.png" width="889" height="510"/>
-        </li>
-        <li>
+        </div>
+        <div class="clearfix none">
             <img src="__PUBLIC__/index/images/map2.png" width="889" height="510"/>
-        </li>
-        <li>
+        </div>
+        <div class="clearfix none">
             <img src="__PUBLIC__/index/images/map3.png" width="889" height="510"/>
-        </li>
-        <li>
+        </div>
+        <div class="clearfix none">
             <img src="__PUBLIC__/index/images/map4.png" width="889" height="510"/>
-        </li>
-        <li>
+        </div>
+        <div class="clearfix none">
             <img src="__PUBLIC__/index/images/map5.png" width="889" height="510"/>
-        </li>
-        <li>
+        </div>
+        <div class="clearfix none">
             <img src="__PUBLIC__/index/images/map6.png" width="889" height="510"/>
-        </li>
-        <li>
+        </div>
+        <div class="clearfix none">
             <img src="__PUBLIC__/index/images/map7.png" width="889" height="510"/>
-        </li>
-        <li>
+        </div>
+        <div class="clearfix none">
             <img src="__PUBLIC__/index/images/map8.png" width="889" height="510"/>
-        </li>
-        <li>
+        </div>
+        <div class="clearfix none">
             <img src="__PUBLIC__/index/images/map9.png" width="889" height="510"/>
-        </li>
+        </div>
     </ul>
 </div>
 <div class="clear20"></div>
