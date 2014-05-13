@@ -231,7 +231,7 @@ class PublicAction extends Action {
         $success_arr = array();
         $error_arr = array();
 
-        for($i = 1; $i <= 161; $i++){
+        for($i = 1; $i <= 100; $i++){
             $User_data['name'] = $currentSheet -> getCell('A' . $i) -> getValue();
             $User_data['sex'] = $sex_arr[rand(0,4)];
             $User_data['tel'] = $currentSheet -> getCell('B' . $i) -> getValue();
@@ -243,7 +243,7 @@ class PublicAction extends Action {
             $User_data['add_2'] = $ad_arr[$add_1]['cityList'][$add_2]['name'];
             $User_data['add_3'] = $ad_arr[$add_1]['cityList'][$add_2]['areaList'][$add_3];
             //time
-            $User_data['applyTime'] = mktime(rand(6,23), rand(0,59), rand(0,59), 5, 12, 2014);
+            $User_data['applyTime'] = mktime(rand(6,23), rand(0,59), rand(0,59), 5, 13, 2014);
             $User_data['source'] = 'web页面';
             if($uid = $User -> add($User_data)){
                 $success_arr[] = $uid;
