@@ -61,7 +61,90 @@ class IndexAction extends Action {
         $data['add_3'] = $this -> _post('add_3');
         $data['source'] = $this -> _post('source');
         $data['applyTime'] = time();
-        if($User -> add($data)){
+        if($uid = $User -> add($data)){
+
+            //自动推送
+            $Offline = M('Offline');
+            $where = array();
+            $where['province'] = $data['add_1'];
+            if($data['add_1'] == '北京' || $data['add_1'] == '天津' || $data['add_1'] == '上海' || $data['add_1'] == '重庆'){
+                $where['city'] = $where['province'];
+            }else{
+                $where['city'] = str_replace('市', '', $data['add_2']);
+            }
+            $where['county'] = $data['add_3'];
+
+            $result_offline = $Offline -> field('uid,name,province,regoin,city,county') -> where($where) -> select();
+
+
+            //有此经销商则自动推送
+            if($result_offline){
+
+                $check = $result_offline[array_rand($result_offline)];
+
+
+                $post_data = array();
+                $post_data['name'] = $data['name'];
+                $post_data['sex'] = $data['sex'];
+                $post_data['phone'] = $data['tel'];
+                $post_data['province'] = $data['add_1'];
+                $post_data['city'] = $data['add_2'];
+                $post_data['address'] = $data['add_3'];
+                $post_data['carstyle'] = 7;//RAV4
+                $post_data['havecarstyle'] = '';
+                $post_data['time'] = '暂不考虑';
+                $post_data['dealers'] = $check['uid'];
+                $post_data['source'] = '379';
+                $post_data['vercode'] = strtoupper(md5($post_data['name'] . $post_data['phone'] . $post_data['source']));
+                $post_data['agreepush'] = '2';
+
+                $ch = curl_init();
+
+                curl_setopt($ch, CURLOPT_URL, 'http://59.151.103.164/ftdlr/api/acardnew.php');
+                curl_setopt($ch, CURLOPT_POST, true);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_USERAGENT, "Uniquead To DLR Beta");
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+
+                $data = curl_exec($ch);
+                curl_close($ch);
+
+                $patterns = "/\d+/";
+                preg_match_all($patterns,$data ,$arr);
+                $data = $arr[0][0];
+
+                /*
+                $return_code = array(
+                    '200' => '提交成功',
+                    '1000' => '系统错误',
+                    '1001' => '经销商代码为空',
+                    '1002' => '经销商代码不存在',
+                    '1003' => '姓名为空',
+                    '1004' => '性别为空',
+                    '1005' => 'Email为空',
+                    '1006' => 'Email格式错误',
+                    '1007' => '手机号码为空',
+                    '1008' => '手机号码位数错误',
+                    '1009' => '信息来源为空',
+                    '1011' => '没有选择省',
+                    '1012' => '没有选择市',
+                    '1013' => '地址为空',
+                    '1014' => '预约车型为空',
+                    '1015' => '预约时间为空',
+                    '2001' => '信息已经存在',
+                    '2002' => '校验码错误',
+                );
+                */
+
+                if($data == '200'){
+                    $data_update = array();
+                    $data_update['id'] = $uid;
+                    $data_update['status'] = 2;
+                    $data_update['province'] = $check['uid'];
+                    $User -> save($data_update);
+                }
+            }
+
             echo 1;
         }else{
             echo 0;
