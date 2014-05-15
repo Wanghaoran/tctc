@@ -1,6 +1,7 @@
 <form id="pagerForm" action="__ACTION__" method="post">
   <input type="hidden" name="pageNum" value="<-{$currentPage}->"/>
   <input type="hidden" name="uid" value="<-{$Think.post.uid}->"/>
+  <input type="hidden" name="status" value="<-{$Think.post.status}->"/>
 </form>
 
 <div class="pageHeader">
@@ -14,6 +15,15 @@
                 <li style="width:330px;">
                     <label>申请人电话：</label>
                     <input type="text" name="tel" />
+                </li>
+
+                <li style="width:330px;">
+                    <label>状态：</label>
+                    <select class="combox" name="status">
+                        <option value="">全部</option>
+                        <option value="1">未推送</option>
+                        <option value="2">已推送</option>
+                    </select>
                 </li>
             </ul>
             <div class="subBar">
