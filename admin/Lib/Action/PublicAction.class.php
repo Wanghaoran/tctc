@@ -170,7 +170,7 @@ class PublicAction extends Action {
     public function excelinput(){
         //导入类库
         Vendor('PHPExcel.IOFactory');
-        $path = './Public/input.xls';
+        $path = './Public/input2.xls';
         $fileType = PHPExcel_IOFactory::identify($path); //文件名自动判断文件类型
         $objReader = PHPExcel_IOFactory::createReader($fileType);
 
@@ -179,10 +179,10 @@ class PublicAction extends Action {
         $currentSheet = $objPHPExcel->getSheet(0); //第一个工作簿
 //        $allRow = $currentSheet->getHighestRow(); //行数
 
-        $sex_arr = array('男', '男', '男', '男', '女');
+        //$sex_arr = array('男', '男', '男', '男', '女');
 
-
-        $json_ad = '[{"name":"江苏", "cityList":[
+/*
+       $json_ad = '[{"name":"江苏", "cityList":[
 {"name":"南京市", "areaList":["市辖区","玄武区","白下区","秦淮区","建邺区","鼓楼区","下关区","浦口区","栖霞区","雨花台区","江宁区","六合区","溧水县","高淳县"]},
 {"name":"无锡市", "areaList":["市辖区","崇安区","南长区","北塘区","锡山区","惠山区","滨湖区","江阴市","宜兴市"]},
 {"name":"徐州市", "areaList":["市辖区","鼓楼区","云龙区","九里区","贾汪区","泉山区","铜山县","睢宁县","新沂市","邳州市"]},
@@ -223,27 +223,32 @@ class PublicAction extends Action {
 {"name":"丽水市", "areaList":["市辖区","莲都区","青田县","缙云县","遂昌县","松阳县","云和县","庆元县","景宁畲族自治县","龙泉市"]}
 ]}
 ]';
+*/
 
-        $ad_arr = json_decode($json_ad, true);
+//        $ad_arr = json_decode($json_ad, true);
 
         $User = M('User');
         $User_data = array();
         $success_arr = array();
         $error_arr = array();
 
-        for($i = 1; $i <= 40; $i++){
-            $User_data['name'] = $currentSheet -> getCell('A' . $i) -> getValue();
-            $User_data['sex'] = $sex_arr[rand(0,4)];
-            $User_data['tel'] = $currentSheet -> getCell('B' . $i) -> getValue();
+        for($i = 1; $i <= 10; $i++){
+            $User_data['name'] = $currentSheet -> getCell('B' . $i) -> getValue();
+//            $User_data['sex'] = $sex_arr[rand(0,4)];
+            $User_data['sex'] = $currentSheet -> getCell('C' . $i) -> getValue();
+            $User_data['tel'] = $currentSheet -> getCell('D' . $i) -> getValue();
             //address
-            $add_1 = array_rand($ad_arr);
-            $add_2 = array_rand($ad_arr[$add_1]['cityList']);
-            $add_3 = array_rand($ad_arr[$add_1]['cityList'][$add_2]['areaList']);
-            $User_data['add_1'] = $ad_arr[$add_1]['name'];
-            $User_data['add_2'] = $ad_arr[$add_1]['cityList'][$add_2]['name'];
-            $User_data['add_3'] = $ad_arr[$add_1]['cityList'][$add_2]['areaList'][$add_3];
+//            $add_1 = array_rand($ad_arr);
+//            $add_2 = array_rand($ad_arr[$add_1]['cityList']);
+//            $add_3 = array_rand($ad_arr[$add_1]['cityList'][$add_2]['areaList']);
+//            $User_data['add_1'] = $ad_arr[$add_1]['name'];
+//            $User_data['add_2'] = $ad_arr[$add_1]['cityList'][$add_2]['name'];
+//            $User_data['add_3'] = $ad_arr[$add_1]['cityList'][$add_2]['areaList'][$add_3];
+              $User_data['add_1'] = $currentSheet -> getCell('E' . $i) -> getValue();
+              $User_data['add_2'] = $currentSheet -> getCell('F' . $i) -> getValue();
+              $User_data['add_3'] = $currentSheet -> getCell('G' . $i) -> getValue();
             //time
-            $User_data['applyTime'] = mktime(rand(6,23), rand(0,59), rand(0,59), 5, 14, 2014);
+            $User_data['applyTime'] = mktime(rand(15,23), rand(0,59), rand(0,59), 5, 20, 2014);
             $User_data['source'] = 'web页面';
             if($uid = $User -> add($User_data)){
                 $success_arr[] = $uid;
