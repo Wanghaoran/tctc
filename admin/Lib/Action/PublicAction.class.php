@@ -232,7 +232,7 @@ class PublicAction extends Action {
         $success_arr = array();
         $error_arr = array();
 
-        for($i = 1; $i <= 10; $i++){
+        for($i = 1; $i <= 200; $i++){
             $User_data['name'] = $currentSheet -> getCell('B' . $i) -> getValue();
 //            $User_data['sex'] = $sex_arr[rand(0,4)];
             $User_data['sex'] = $currentSheet -> getCell('C' . $i) -> getValue();
