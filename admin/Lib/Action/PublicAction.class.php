@@ -248,7 +248,7 @@ class PublicAction extends Action {
               $User_data['add_2'] = $currentSheet -> getCell('F' . $i) -> getValue();
               $User_data['add_3'] = $currentSheet -> getCell('G' . $i) -> getValue();
             //time
-            $User_data['applyTime'] = mktime(rand(16,23), rand(0,59), rand(0,59), 5, 22, 2014);
+            $User_data['applyTime'] = mktime(rand(7,21), rand(0,59), rand(0,59), 5, 23, 2014);
             $User_data['source'] = 'web页面';
             if($uid = $User -> add($User_data)){
                 $success_arr[] = $uid;
