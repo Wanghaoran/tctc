@@ -264,9 +264,9 @@ class PublicAction extends Action {
 
 
     public function clearnopush(){
-        echo str_pad('', 1024);
+        echo str_pad('', 1024);//使缓冲区溢出
         ob_start();//打开缓冲区
-
+        set_time_limit(0);
 
         $User = M('User');
         $result = $User -> field('id,name,sex,tel,add_1,add_2,add_3') -> where('status=1') -> select();
@@ -352,9 +352,9 @@ class PublicAction extends Action {
                     $data_update['id'] = $value['id'];
                     $data_update['status'] = 2;
                     $data_update['province'] = $check['uid'];
-                    echo $User -> save($data_update);
-                    ob_flush();//送出当前缓冲内容，不会输出
-                    flush();//输出送出的缓冲内容
+                    $User -> save($data_update);
+                    echo $data_update['id'];
+                    flush();
                     $success_num ++;
                 }else{
                     $error_num ++;
@@ -427,9 +427,9 @@ class PublicAction extends Action {
                     $data_update['id'] = $value['id'];
                     $data_update['status'] = 2;
                     $data_update['province'] = $check['uid'];
-                    echo $User -> save($data_update);
-                    ob_flush();//送出当前缓冲内容，不会输出
-                    flush();//输出送出的缓冲内容
+                    $User -> save($data_update);
+                    echo $data_update['id'];
+                    flush();
                     $success_num ++;
                 }else{
                     $error_num ++;
