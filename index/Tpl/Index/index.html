@@ -323,9 +323,9 @@
                     var list_str = '';
                     $.each(ress.data, function(key, val) {
                         if(key % 5 == 4){
-                            list_str += "<li class='five'><a class='btn_zan' onclick='tozan(" + val.id + ");'>赞</a><a onclick='showcontent("+ val.id + ");'><img src='./Uploads/" + val.s_img + "' /></a><div>[" + val.type + "/" + val.addtime + "]" + val.title + "</div></li>";
+                            list_str += "<li class='five'><a class='btn_zan' onclick='tozan(" + val.id + ");'>赞</a><a onclick='showcontent("+ val.id + ");'><img src='http://1000kmpacificrav4.tctc.com.cn/Uploads/" + val.s_img + "' /></a><div>[" + val.type + "/" + val.addtime + "]" + val.title + "</div></li>";
                         }else{
-                            list_str += "<li><a class='btn_zan' onclick='tozan(" + val.id + ");'>赞</a><a onclick='showcontent("+ val.id + ");'><img src='./Uploads/" + val.s_img + "' /></a><div>[" + val.type + "/" + val.addtime + "]" + val.title + "</div></li>";
+                            list_str += "<li><a class='btn_zan' onclick='tozan(" + val.id + ");'>赞</a><a onclick='showcontent("+ val.id + ");'><img src='http://1000kmpacificrav4.tctc.com.cn/Uploads/" + val.s_img + "' /></a><div>[" + val.type + "/" + val.addtime + "]" + val.title + "</div></li>";
 
                         }
 
@@ -385,7 +385,7 @@
                 dataType : 'json',
                 success : function(ress){
                     $('#travel_title').html("<span>作者：" + ress.uname + "&nbsp;&nbsp;" + ress.addtime + "</span>" + ress.title + "<a target='_blank' href='http://service.weibo.com/share/share.php?url=http%3A%2F%2F1000kmpacificrav4.tctc.com.cn&searchPic=false&pic=http%3A%2F%2F1000kmpacificrav4.tctc.com.cn%2FUploads%2F" + ress.b_img + "&appkey=1078875116&title=%E6%88%91%E5%88%86%E4%BA%AB%E4%BA%86%231000%E5%85%AC%E9%87%8C%E7%9A%84%E5%A4%AA%E5%B9%B3%E6%B4%8B%23RAV4-20%E5%91%A8%E5%B9%B4%E7%BA%AA%E5%BF%B5%E6%B4%BB%E5%8A%A8%E6%96%87%E7%AB%A0%EF%BC%9A%E3%80%8A" + ress.title +"%E3%80%8B' style='margin-left: 20px;'><img height='25' src='./Public/index/images/shareweibo.png' /></a>");
-                    $('#travel_img').html("<img src='./Uploads/" + ress.b_img + "' />");
+                    $('#travel_img').html("<img src='http://1000kmpacificrav4.tctc.com.cn/Uploads/" + ress.b_img + "' />");
                     $('#travel_info').html(ress.content);
                 }
             });
