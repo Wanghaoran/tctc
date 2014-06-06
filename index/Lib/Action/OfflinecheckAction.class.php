@@ -2,6 +2,8 @@
 class OfflinecheckAction extends Action {
 
     public function _initialize(){
+        $this -> show('<h1>活动已结束！</h1>');
+        exit;
         if(!$_SESSION['offline_user']){
             redirect(PHP_FILE . '/Public/login');
         }
