@@ -428,4 +428,8 @@ class IndexAction extends Action {
             return;
         }
     }
+
+    public function winners(){
+        $this -> display();
+    }
 }
