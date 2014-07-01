@@ -512,6 +512,13 @@
 <!--遮罩层2  end-->
 
 
+<!--pop start-->
+<div class="popdiv" id="mingdan">
+    <a href="javascript:closeBg22()" class="btn_del" title="关闭"></a>
+    <a href="__URL__/winners"><img src="__PUBLIC__/index/images/mingdan.png" width="479" height="60" border="0" /></a>
+</div>
+<!--pop end-->
+
 <!--遮罩层3  微博成功返回绑定弹出层 start-->
 <div id="popDiv3" class="mydiv" style="display: none;">
     <div class="divimg3">
@@ -829,6 +836,11 @@
         popDiv3();
     </script>
 </notempty>
+<script>
+    function closeBg22() {
+        $("#mingdan").hide();
+    }
+</script>
 
 
 </html>
